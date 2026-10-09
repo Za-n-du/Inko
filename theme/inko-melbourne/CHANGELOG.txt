@@ -1,0 +1,15 @@
+INKO Melbourne theme - changelog
+================================
+3.0.0 - V3 FINAL (self-contained rebuild on the V2 base; nothing depends on V1/V2)
+ + Matched the 12 locked references at 1920x1080 / 768x1024 / 456x645.
+ + Hero + Quotation: tattoo-machine photography (cropped from the approved references); footer: studio background.
+ + Header: Book Now + burger on every device, logo variant by breakpoint, one header only (leftover copies removed).
+ + Social rail, side label and the 12-number counter visible on tablet and mobile; scroll cue everywhere.
+ + Slide 02 cards stack on tablet/mobile; galleries: 2 stacked cards (tablet) / 1 card (mobile) with arrows.
+ + Slide 05 Artists: reference composition (ring + 3 overlapping rotating photos), reference intro text, MEET THE TEAM opens the
+   team panel with all four artists' exact copy.
+ + Slide 06 Follow Us: single line + 3 dots + icon row on tablet/mobile. Slide 07: street-map graphic, stacked layout, photo + thumbs.
+ + Slide 08: subtitle (Real People / Real Experiences / Real Art), glow cards, dots on mobile. Slide 09: logos always one row.
+ + Slide 10: dots on mobile. Slide 12: glowing logo, stacked centred layout.
+ + Scroll: one slide per gesture, cooldown + lock (also while the team panel is open), sideways swipes drive galleries.
+ + Fixes carried from V2.1: white social icons, short-window fitting, single logo, edge alignment.

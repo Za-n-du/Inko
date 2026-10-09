@@ -1,0 +1,45 @@
+/* INKO Melbourne - base: design tokens, resets, Elementor spacing resets */
+:root{--hdr:88px;--padx:clamp(24px,7.5vw,120px);--ease:cubic-bezier(.22,.61,.36,1)}
+body{
+  --black:var(--e-global-color-ikblack,#090b0f);--charcoal:var(--e-global-color-ikcharcoal,#15191f);--ash:var(--e-global-color-ikash,#23262b);
+  --white:var(--e-global-color-ikwhite,#f4f1ec);--orange:var(--e-global-color-ikorange,#ff5a18);
+  --ash-2:#3a3d43;--muted:#a8adb5;--orange-d:#e64e12;--line:rgba(244,241,236,.14);
+  --f-disp:var(--e-global-typography-ikdisplay-font-family,"Archivo"),"Helvetica Neue",Arial,FreeSans,sans-serif;
+  --f-body:var(--e-global-typography-ikbody-font-family,"Manrope"),"Helvetica Neue",Arial,FreeSans,sans-serif;
+}
+html{background:#090b0f;scroll-behavior:auto}
+body{background:var(--black)}
+body{overflow-x:hidden;overscroll-behavior-y:none}
+.ik-scope{font-family:var(--f-body);color:var(--white);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.ik-scope.e-con,.ik-scope .e-con{--padding-top:0px;--padding-right:0px;--padding-bottom:0px;--padding-left:0px;--margin-top:0px;--margin-bottom:0px;--gap:0px;--row-gap:0px;--column-gap:0px;min-height:0;box-sizing:border-box}
+.ik-scope .elementor-widget:not(:last-child){margin-block-end:0;margin-bottom:0}
+.ik-scope .elementor-widget-container{margin:0;padding:0}
+.ik-scope .elementor-heading-title{margin:0;padding:0;font-family:inherit;color:inherit}
+.ik-scope .elementor-widget-text-editor{font-family:inherit;color:inherit}
+.ik-scope .elementor-widget-text-editor p{margin:0}
+.ik-scope a{text-decoration:none}
+.ik-scope img{display:block;max-width:100%}
+.ik-scope :focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+.ik-or,.ik-scope .ik-or{color:var(--orange)}
+
+/* ---------- theme basics ---------- */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+.screen-reader-text,.ik-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--orange);color:#111;padding:10px 16px;font:700 13px var(--f-body)}
+.skip-link:focus{left:8px}
+.ik-header,.ik-menu,.ik-label,.ik-rail,.ik-count,.ik-cue{font-family:var(--f-body);color:var(--white);-webkit-font-smoothing:antialiased}
+.ik-header a,.ik-menu a,.ik-rail a{color:inherit;text-decoration:none}
+.ik-header :focus-visible,.ik-menu :focus-visible,.ik-rail :focus-visible,.ik-count :focus-visible,.ik-cue :focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+.ik-track{width:1px;pointer-events:none;visibility:hidden}
+/* generic pages (page.php / single.php / 404.php) */
+.ik-page{min-height:100vh;padding:calc(var(--hdr) + 56px) var(--padx) 64px;background:var(--charcoal);color:var(--white);font-family:var(--f-body)}
+.ik-page__in{max-width:860px;margin:0 auto}
+.ik-page h1{font:900 clamp(36px,5vw,64px)/1 var(--f-disp);letter-spacing:-.02em;margin:0 0 24px}
+.ik-page p,.ik-page li{line-height:1.7;color:rgba(244,241,236,.85)}
+.ik-page a{color:var(--orange)}
+.ik-page .ik-hbtn{margin-top:16px}
+.ik-simple-footer{padding:36px var(--padx);background:var(--black);color:var(--white);font-family:var(--f-body);text-align:center;border-top:1px solid var(--line)}
+.ik-simple-footer strong{display:block;font-weight:500;font-size:20px;margin-bottom:8px}
+.ik-simple-footer p{margin:4px 0;color:var(--muted);font-size:14px}
+.ik-simple-footer a{color:var(--white);text-decoration:none}

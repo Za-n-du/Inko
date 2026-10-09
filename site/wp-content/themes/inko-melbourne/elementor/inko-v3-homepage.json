@@ -1,0 +1,3852 @@
+{
+ "version": "0.4",
+ "title": "INKO Melbourne V3 Homepage",
+ "type": "page",
+ "content": [
+  {
+   "id": "04d002e",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-hero",
+    "_element_id": "home"
+   },
+   "elements": [
+    {
+     "id": "04d0027",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_hero-bg__",
+       "id": "__ID_hero-bg__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "ik-slide__bg s-hero__bg"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d002d",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "108",
+       "bottom": "96",
+       "left": "108",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "104",
+       "right": "76",
+       "bottom": "96",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "92",
+       "right": "54",
+       "bottom": "84",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d002c",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "s-hero__txt"
+       },
+       "elements": [
+        {
+         "id": "04d0028",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Premium Tattoos</p>",
+          "_css_classes": "s-hero__lab"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d0029",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "<span>BALI</span><span class=\"ik-or\">PRICES</span>",
+          "header_size": "h1",
+          "_css_classes": "s-hero__title"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d002a",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>and get quality work done by your local artists.</p>",
+          "_css_classes": "s-hero__p"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d002b",
+         "elType": "widget",
+         "widgetType": "button",
+         "settings": {
+          "text": "See Promos",
+          "link": {
+           "url": "#promotions",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "selected_icon": {
+           "value": "fas fa-arrow-right",
+           "library": "fa-solid"
+          },
+          "icon_align": "row-reverse",
+          "_css_classes": "ik-btn ik-btn--solid"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d003f",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-intro ik-frame",
+    "_element_id": "specialities"
+   },
+   "elements": [
+    {
+     "id": "04d002f",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_intro-bg__",
+       "id": "__ID_intro-bg__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "ik-slide__bg s-intro__bg"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d0031",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-scope ik-shade"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d003e",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "128",
+       "right": "108",
+       "bottom": "96",
+       "left": "108",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "112",
+       "right": "76",
+       "bottom": "96",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "96",
+       "right": "54",
+       "bottom": "84",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d0032",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "At INKO, we <span class=\"ik-or\">specialise</span> in Fine-line and Realism tattoos - delicate detail, bold storytelling.",
+        "header_size": "h2",
+        "_css_classes": "s-intro__h"
+       },
+       "elements": []
+      },
+      {
+       "id": "04d003d",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "s-intro__cards"
+       },
+       "elements": [
+        {
+         "id": "04d0037",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "ik-card"
+         },
+         "elements": [
+          {
+           "id": "04d0033",
+           "elType": "widget",
+           "widgetType": "image",
+           "settings": {
+            "image": {
+             "url": "__URL_card-fineline__",
+             "id": "__ID_card-fineline__",
+             "source": "library"
+            },
+            "image_size": "full",
+            "link_to": "none",
+            "_css_classes": "ik-card__img"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d0036",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "ik-card__row"
+           },
+           "elements": [
+            {
+             "id": "04d0034",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Fine-Line",
+              "header_size": "h3",
+              "_css_classes": "ik-card__t"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d0035",
+             "elType": "widget",
+             "widgetType": "button",
+             "settings": {
+              "text": "",
+              "link": {
+               "url": "#fine-line",
+               "is_external": "",
+               "nofollow": "",
+               "custom_attributes": ""
+              },
+              "selected_icon": {
+               "value": "fas fa-arrow-right",
+               "library": "fa-solid"
+              },
+              "icon_align": "row-reverse",
+              "_css_classes": "ik-card__go"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "04d003c",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "ik-card"
+         },
+         "elements": [
+          {
+           "id": "04d0038",
+           "elType": "widget",
+           "widgetType": "image",
+           "settings": {
+            "image": {
+             "url": "__URL_card-realism__",
+             "id": "__ID_card-realism__",
+             "source": "library"
+            },
+            "image_size": "full",
+            "link_to": "none",
+            "_css_classes": "ik-card__img"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d003b",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "ik-card__row"
+           },
+           "elements": [
+            {
+             "id": "04d0039",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Realism",
+              "header_size": "h3",
+              "_css_classes": "ik-card__t"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d003a",
+             "elType": "widget",
+             "widgetType": "button",
+             "settings": {
+              "text": "",
+              "link": {
+               "url": "#realism",
+               "is_external": "",
+               "nofollow": "",
+               "custom_attributes": ""
+              },
+              "selected_icon": {
+               "value": "fas fa-arrow-right",
+               "library": "fa-solid"
+              },
+              "icon_align": "row-reverse",
+              "_css_classes": "ik-card__go"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d0055",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-gal ik-frame s-fine",
+    "_element_id": "fine-line"
+   },
+   "elements": [
+    {
+     "id": "04d004e",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_gal-bg__",
+       "id": "__ID_gal-bg__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "ik-slide__bg "
+     },
+     "elements": []
+    },
+    {
+     "id": "04d004f",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-scope ik-shade"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d0054",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "144",
+       "bottom": "96",
+       "left": "144",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "104",
+       "right": "76",
+       "bottom": "96",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "96",
+       "right": "54",
+       "bottom": "84",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d0051",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "s-gal__head"
+       },
+       "elements": [
+        {
+         "id": "04d0050",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Fine<span class=\"ik-dash\">-</span><span class=\"ik-or\">Line</span>",
+          "header_size": "h2",
+          "_css_classes": "s-gal__t"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "04d0053",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "ik-car"
+       },
+       "elements": [
+        {
+         "id": "04d0052",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "ik-car__tr"
+         },
+         "elements": [
+          {
+           "id": "04d0041",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0040",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_fl-01-lg__",
+               "id": "__ID_fl-01-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0043",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0042",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_fl-02-lg__",
+               "id": "__ID_fl-02-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0045",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0044",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_fl-03-lg__",
+               "id": "__ID_fl-03-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0047",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0046",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_fl-04-lg__",
+               "id": "__ID_fl-04-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0049",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0048",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_fl-05-lg__",
+               "id": "__ID_fl-05-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d004b",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d004a",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_fl-06-lg__",
+               "id": "__ID_fl-06-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d004d",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d004c",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_fl-07-lg__",
+               "id": "__ID_fl-07-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d0071",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-gal ik-frame s-real",
+    "_element_id": "realism"
+   },
+   "elements": [
+    {
+     "id": "04d006a",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_gal-bg__",
+       "id": "__ID_gal-bg__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "ik-slide__bg "
+     },
+     "elements": []
+    },
+    {
+     "id": "04d006b",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-scope ik-shade"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d0070",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "144",
+       "bottom": "96",
+       "left": "144",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "104",
+       "right": "76",
+       "bottom": "96",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "96",
+       "right": "54",
+       "bottom": "84",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d006d",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "s-gal__head"
+       },
+       "elements": [
+        {
+         "id": "04d006c",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Real<span class=\"ik-or\">ism</span>",
+          "header_size": "h2",
+          "_css_classes": "s-gal__t"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "04d006f",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "ik-car"
+       },
+       "elements": [
+        {
+         "id": "04d006e",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "ik-car__tr"
+         },
+         "elements": [
+          {
+           "id": "04d0057",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0056",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-01-lg__",
+               "id": "__ID_re-01-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0059",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0058",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-02-lg__",
+               "id": "__ID_re-02-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d005b",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d005a",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-03-lg__",
+               "id": "__ID_re-03-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d005d",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d005c",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-04-lg__",
+               "id": "__ID_re-04-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d005f",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d005e",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-05-lg__",
+               "id": "__ID_re-05-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0061",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0060",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-06-lg__",
+               "id": "__ID_re-06-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0063",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0062",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-07-lg__",
+               "id": "__ID_re-07-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0065",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0064",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-08-lg__",
+               "id": "__ID_re-08-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0067",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0066",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-09-lg__",
+               "id": "__ID_re-09-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0069",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d0068",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_re-10-lg__",
+               "id": "__ID_re-10-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d009e",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-art ik-frame",
+    "_element_id": "artists"
+   },
+   "elements": [
+    {
+     "id": "04d0086",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_bg-artists__",
+       "id": "__ID_bg-artists__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "ik-slide__bg "
+     },
+     "elements": []
+    },
+    {
+     "id": "04d0087",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-scope ik-shade"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d0098",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "112",
+       "right": "108",
+       "bottom": "84",
+       "left": "108",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "112",
+       "right": "76",
+       "bottom": "84",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "130",
+       "right": "54",
+       "bottom": "76",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d0097",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "s-art__top"
+       },
+       "elements": [
+        {
+         "id": "04d008c",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-art__txt"
+         },
+         "elements": [
+          {
+           "id": "04d0088",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p>Our Artists</p>",
+            "_css_classes": "s-art__lab"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d0089",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "<span>MEET</span><span>OUR</span><span class=\"ik-or\">ARTISTS</span>",
+            "header_size": "h2",
+            "_css_classes": "s-art__h"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d008a",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p>A talented team of artists, each with their own unique style. From fine line to realism, we create tattoos that tell your story.</p>",
+            "_css_classes": "s-art__p"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d008b",
+           "elType": "widget",
+           "widgetType": "button",
+           "settings": {
+            "text": "Meet the team",
+            "link": {
+             "url": "#ik-team",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "selected_icon": {
+             "value": "fas fa-arrow-right",
+             "library": "fa-solid"
+            },
+            "icon_align": "row-reverse",
+            "_css_classes": "ik-btn ik-btn--solid"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "04d0096",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-art__stack"
+         },
+         "elements": [
+          {
+           "id": "04d008d",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-scope s-art__ring"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d008f",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "s-art__ph ik-artist-yinkspire"
+           },
+           "elements": [
+            {
+             "id": "04d008e",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_art-03__",
+               "id": "__ID_art-03__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0091",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "s-art__ph ik-artist-don"
+           },
+           "elements": [
+            {
+             "id": "04d0090",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_art-02__",
+               "id": "__ID_art-02__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0093",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "s-art__ph ik-artist-swan"
+           },
+           "elements": [
+            {
+             "id": "04d0092",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_art-04__",
+               "id": "__ID_art-04__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d0095",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "s-art__ph ik-artist-elmundo"
+           },
+           "elements": [
+            {
+             "id": "04d0094",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_art-01__",
+               "id": "__ID_art-01__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "none"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "04d009d",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-team"
+     },
+     "elements": [
+      {
+       "id": "04d009c",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "ik-team__in"
+       },
+       "elements": [
+        {
+         "id": "04d0099",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Meet Our Artists",
+          "header_size": "h3",
+          "_css_classes": "ik-team__t"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d009b",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "ik-car s-art__team"
+         },
+         "elements": [
+          {
+           "id": "04d009a",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "ik-car__tr"
+           },
+           "elements": [
+            {
+             "id": "04d0076",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-car__it ik-acard"
+             },
+             "elements": [
+              {
+               "id": "04d0072",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Swan",
+                "header_size": "h3",
+                "_css_classes": "ik-acard__n"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d0073",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>AKA BunnyGirlInk</p>",
+                "_css_classes": "ik-acard__a"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d0074",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Fine-Line Artist – Floral &amp; Realism</p>",
+                "_css_classes": "ik-acard__r"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d0075",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Specialising in fine-line floral and soft realism tattoos, we create clean, delicate designs with subtle depth—timeless, minimal, and effortlessly elegant.</p>",
+                "_css_classes": "ik-acard__d"
+               },
+               "elements": []
+              }
+             ]
+            },
+            {
+             "id": "04d007b",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-car__it ik-acard"
+             },
+             "elements": [
+              {
+               "id": "04d0077",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Elmundo",
+                "header_size": "h3",
+                "_css_classes": "ik-acard__n"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d0078",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>AKA ELM J</p>",
+                "_css_classes": "ik-acard__a"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d0079",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Realism Artist</p>",
+                "_css_classes": "ik-acard__r"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d007a",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Specialist in Realism and Fine-Line Realism tattoos, executing flawless detail and understated depth. Committed to crafting timeless designs that ensure each piece is uniquely personal.</p>",
+                "_css_classes": "ik-acard__d"
+               },
+               "elements": []
+              }
+             ]
+            },
+            {
+             "id": "04d0080",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-car__it ik-acard"
+             },
+             "elements": [
+              {
+               "id": "04d007c",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Yinkspire",
+                "header_size": "h3",
+                "_css_classes": "ik-acard__n"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d007d",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>AKA Yosufi</p>",
+                "_css_classes": "ik-acard__a"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d007e",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Realism Artist</p>",
+                "_css_classes": "ik-acard__r"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d007f",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Specialises in detailed realism tattoos with striking depth and precision, creating lifelike designs that stand the test of time.</p>",
+                "_css_classes": "ik-acard__d"
+               },
+               "elements": []
+              }
+             ]
+            },
+            {
+             "id": "04d0085",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-car__it ik-acard"
+             },
+             "elements": [
+              {
+               "id": "04d0081",
+               "elType": "widget",
+               "widgetType": "heading",
+               "settings": {
+                "title": "Don",
+                "header_size": "h3",
+                "_css_classes": "ik-acard__n"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d0082",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>AKA OIDONNY</p>",
+                "_css_classes": "ik-acard__a"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d0083",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Founder - INKO</p>",
+                "_css_classes": "ik-acard__r"
+               },
+               "elements": []
+              },
+              {
+               "id": "04d0084",
+               "elType": "widget",
+               "widgetType": "text-editor",
+               "settings": {
+                "editor": "<p>Specialises Realism and Fine-Line realism tattoos with flawless detail and subtle depth. Dedicated to timeless, true-to-life designs that make every piece unique.</p>",
+                "_css_classes": "ik-acard__d"
+               },
+               "elements": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d00ac",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-follow ik-frame",
+    "_element_id": "follow-us"
+   },
+   "elements": [
+    {
+     "id": "04d009f",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_follow-bg__",
+       "id": "__ID_follow-bg__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "ik-slide__bg s-follow__bg"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d00ab",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "0",
+       "bottom": "96",
+       "left": "0",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "104",
+       "right": "0",
+       "bottom": "96",
+       "left": "0",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "92",
+       "right": "0",
+       "bottom": "84",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a6f0c11",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Follow <span class=\"ik-or\">Us</span>",
+        "header_size": "h2",
+        "_css_classes": "s-follow__h"
+       },
+       "elements": []
+      },
+      {
+       "id": "a6f0c12",
+       "elType": "widget",
+       "widgetType": "text-editor",
+       "settings": {
+        "editor": "<p>Stay connected <span class=\"ik-or\">&bull;</span> Be part of our story</p>",
+        "_css_classes": "s-follow__sub"
+       },
+       "elements": []
+      },
+      {
+       "id": "04d00aa",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "ik-soc5"
+       },
+       "elements": [
+        {
+         "id": "04d00a6",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "url": "__URL_ic-instagram__",
+           "id": "__ID_ic-instagram__",
+           "source": "library"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "https://www.instagram.com/inko_melbourne/",
+           "is_external": "on",
+           "nofollow": "",
+           "custom_attributes": ""
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00a5",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "url": "__URL_ic-facebook__",
+           "id": "__ID_ic-facebook__",
+           "source": "library"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "https://www.facebook.com/inkomelbourne/",
+           "is_external": "on",
+           "nofollow": "",
+           "custom_attributes": ""
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00a7",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "url": "__URL_ic-tiktok__",
+           "id": "__ID_ic-tiktok__",
+           "source": "library"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "#",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00a8",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "url": "__URL_ic-youtube__",
+           "id": "__ID_ic-youtube__",
+           "source": "library"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "#",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00a9",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "url": "__URL_ic-threads__",
+           "id": "__ID_ic-threads__",
+           "source": "library"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "#",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          }
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d00c3",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-loc ik-frame",
+    "_element_id": "location"
+   },
+   "elements": [
+    {
+     "id": "04d00b7",
+     "elType": "widget",
+     "widgetType": "heading",
+     "settings": {
+      "title": "LOCATION",
+      "header_size": "h6",
+      "_css_classes": "s-loc__ghost"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d00b8",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-scope s-loc__map"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d00c2",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "172",
+       "right": "115",
+       "bottom": "96",
+       "left": "130",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "112",
+       "right": "76",
+       "bottom": "92",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "126",
+       "right": "54",
+       "bottom": "70",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d00c0",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "s-loc__txt"
+       },
+       "elements": [
+        {
+         "id": "04d00b9",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "OUR <span class=\"ik-or\">LOCATION</span>",
+          "header_size": "h2",
+          "_css_classes": "s-loc__h"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00ba",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Tucked into the creative pocket of Cookson Street, INKO Melbourne is more than just a tattoo studio — it’s a destination for self-expression. Surrounded by tram and bus lines and just a quick 2-minute walk from Camberwell Station, we’re easy to find and even easier to vibe with.</p>",
+          "_css_classes": "s-loc__p"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00bb",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Step into our studio and you’ll find clean lines, calming energy, and artists who live for the craft. Whether you're after fine line elegance or hyper-realistic depth, INKO is where your vision becomes wearable art.</p>",
+          "_css_classes": "s-loc__p"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00bf",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "s-loc__card"
+         },
+         "elements": [
+          {
+           "id": "04d00bc",
+           "elType": "widget",
+           "widgetType": "image",
+           "settings": {
+            "image": {
+             "url": "__URL_pin__",
+             "id": "__ID_pin__",
+             "source": "library"
+            },
+            "image_size": "full",
+            "link_to": "none",
+            "_css_classes": "s-loc__pin"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d00bd",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p><strong>INKO Melbourne Tattoo Studio</strong><br>1c Cookson Street, Camberwell, VIC 3142</p>",
+            "_css_classes": "s-loc__addr"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d00be",
+           "elType": "widget",
+           "widgetType": "button",
+           "settings": {
+            "text": "Sweep to locate us",
+            "link": {
+             "url": "https://www.google.com/maps/search/?api=1&query=1c+Cookson+Street+Camberwell+VIC+3142",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "_css_classes": "ik-btn"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "04d00c1",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "s-loc__gal"
+       },
+       "elements": [
+        {
+         "id": "04d00ae",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-loc__tile"
+         },
+         "elements": [
+          {
+           "id": "04d00ad",
+           "elType": "widget",
+           "widgetType": "image",
+           "settings": {
+            "image": {
+             "url": "__URL_loc-01__",
+             "id": "__ID_loc-01__",
+             "source": "library"
+            },
+            "image_size": "full",
+            "link_to": "none"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "04d00b0",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-loc__tile"
+         },
+         "elements": [
+          {
+           "id": "04d00af",
+           "elType": "widget",
+           "widgetType": "image",
+           "settings": {
+            "image": {
+             "url": "__URL_loc-02__",
+             "id": "__ID_loc-02__",
+             "source": "library"
+            },
+            "image_size": "full",
+            "link_to": "none"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "04d00b2",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-loc__tile"
+         },
+         "elements": [
+          {
+           "id": "04d00b1",
+           "elType": "widget",
+           "widgetType": "image",
+           "settings": {
+            "image": {
+             "url": "__URL_loc-03__",
+             "id": "__ID_loc-03__",
+             "source": "library"
+            },
+            "image_size": "full",
+            "link_to": "none"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "04d00b4",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-loc__tile"
+         },
+         "elements": [
+          {
+           "id": "04d00b3",
+           "elType": "widget",
+           "widgetType": "image",
+           "settings": {
+            "image": {
+             "url": "__URL_loc-04__",
+             "id": "__ID_loc-04__",
+             "source": "library"
+            },
+            "image_size": "full",
+            "link_to": "none"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "04d00b6",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-loc__tile"
+         },
+         "elements": [
+          {
+           "id": "04d00b5",
+           "elType": "widget",
+           "widgetType": "image",
+           "settings": {
+            "image": {
+             "url": "__URL_loc-05__",
+             "id": "__ID_loc-05__",
+             "source": "library"
+            },
+            "image_size": "full",
+            "link_to": "none"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d00df",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-rev",
+    "_element_id": "reviews"
+   },
+   "elements": [
+    {
+     "id": "04d00d4",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_bg-reviews__",
+       "id": "__ID_bg-reviews__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "ik-slide__bg "
+     },
+     "elements": []
+    },
+    {
+     "id": "04d00d5",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-scope ik-shade"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d00de",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "130",
+       "bottom": "96",
+       "left": "130",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "112",
+       "right": "76",
+       "bottom": "96",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "130",
+       "right": "54",
+       "bottom": "76",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d00db",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "s-rev__head"
+       },
+       "elements": [
+        {
+         "id": "04d00d6",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Trusted by Our Customers – <br>Read <span class=\"ik-or\">Google Reviews</span>",
+          "header_size": "h2",
+          "_css_classes": "s-rev__h"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00d9",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "s-rev__score"
+         },
+         "elements": [
+          {
+           "id": "04d00d7",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "5.0",
+            "header_size": "h3",
+            "_css_classes": "s-rev__num"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d00d8",
+           "elType": "widget",
+           "widgetType": "star-rating",
+           "settings": {
+            "rating_scale": 5,
+            "rating": 5,
+            "star_style": "star_unicode",
+            "unmarked_star_style": "outline",
+            "title": "",
+            "_css_classes": "ik-stars s-rev__stars"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "04d00da",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Real People <span class=\"ik-or\">•</span> Real Experiences <span class=\"ik-or\">•</span> Real Art</p>",
+          "_css_classes": "s-rev__sub"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "04d00dd",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "ik-car"
+       },
+       "elements": [
+        {
+         "id": "04d00dc",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "ik-car__tr"
+         },
+         "elements": [
+          {
+           "id": "04d00c7",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d00c4",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>“Absolutely loved my experience! Talented, professional artists who made me feel comfortable throughout. The detail is incredible and my tattoo came out even better than I imagined. Highly recommend!”</p>",
+              "_css_classes": "s-rev__q"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00c5",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Isuru Chathuranga",
+              "header_size": "h4",
+              "_css_classes": "s-rev__name"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00c6",
+             "elType": "widget",
+             "widgetType": "star-rating",
+             "settings": {
+              "rating_scale": 5,
+              "rating": 5,
+              "star_style": "star_unicode",
+              "unmarked_star_style": "outline",
+              "title": "",
+              "_css_classes": "ik-stars s-rev__stars"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d00cb",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d00c8",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>“Amazing first tattoo experience! Super gentle, made sure I was 100% comfortable, and even provided water and snacks. Highly recommend Inko for quality tattoos and the best experience! I will make sure to come back.”</p>",
+              "_css_classes": "s-rev__q"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00c9",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Jennifer Lean",
+              "header_size": "h4",
+              "_css_classes": "s-rev__name"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00ca",
+             "elType": "widget",
+             "widgetType": "star-rating",
+             "settings": {
+              "rating_scale": 5,
+              "rating": 5,
+              "star_style": "star_unicode",
+              "unmarked_star_style": "outline",
+              "title": "",
+              "_css_classes": "ik-stars s-rev__stars"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d00cf",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d00cc",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>“10 tattoos in one session and couldn’t be happier! The artist was patient, professional, and really cares about her work. Amazing fine line detail, great prices, and overall an incredible experience. Highly recommend!”</p>",
+              "_css_classes": "s-rev__q"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00cd",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "Anneliese Moore",
+              "header_size": "h4",
+              "_css_classes": "s-rev__name"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00ce",
+             "elType": "widget",
+             "widgetType": "star-rating",
+             "settings": {
+              "rating_scale": 5,
+              "rating": 5,
+              "star_style": "star_unicode",
+              "unmarked_star_style": "outline",
+              "title": "",
+              "_css_classes": "ik-stars s-rev__stars"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "04d00d3",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it"
+           },
+           "elements": [
+            {
+             "id": "04d00d0",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "settings": {
+              "editor": "<p>“Got my Chicano-style tattoo today after a year of research, and he absolutely delivered. The quality speaks for itself (see photo). Pricing is fair—you get what you pay for, and he’s the best at what he does!”</p>",
+              "_css_classes": "s-rev__q"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00d1",
+             "elType": "widget",
+             "widgetType": "heading",
+             "settings": {
+              "title": "James Bradfield",
+              "header_size": "h4",
+              "_css_classes": "s-rev__name"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00d2",
+             "elType": "widget",
+             "widgetType": "star-rating",
+             "settings": {
+              "rating_scale": 5,
+              "rating": 5,
+              "star_style": "star_unicode",
+              "unmarked_star_style": "outline",
+              "title": "",
+              "_css_classes": "ik-stars s-rev__stars"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d00e6",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-pay",
+    "_element_id": "pay-later"
+   },
+   "elements": [
+    {
+     "id": "04d00e5",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "108",
+       "bottom": "96",
+       "left": "108",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "112",
+       "right": "76",
+       "bottom": "96",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "130",
+       "right": "54",
+       "bottom": "84",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d00e0",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "Ink Now,<br><span class=\"ik-or\">Pay Later.</span>",
+        "header_size": "h2",
+        "_css_classes": "s-pay__title"
+       },
+       "elements": []
+      },
+      {
+       "id": "04d00e4",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "ik-pay"
+       },
+       "elements": [
+        {
+         "id": "04d00e1",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "url": "__URL_pay-afterpay__",
+           "id": "__ID_pay-afterpay__",
+           "source": "library"
+          },
+          "image_size": "full",
+          "link_to": "none"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00e2",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "url": "__URL_pay-klarna__",
+           "id": "__ID_pay-klarna__",
+           "source": "library"
+          },
+          "image_size": "full",
+          "link_to": "none"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d00e3",
+         "elType": "widget",
+         "widgetType": "image",
+         "settings": {
+          "image": {
+           "url": "__URL_pay-zip__",
+           "id": "__ID_pay-zip__",
+           "source": "library"
+          },
+          "image_size": "full",
+          "link_to": "none"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d012c",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-promo",
+    "_element_id": "promotions"
+   },
+   "elements": [
+    {
+     "id": "04d012b",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "130",
+       "bottom": "88",
+       "left": "130",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "112",
+       "right": "76",
+       "bottom": "88",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "102",
+       "right": "54",
+       "bottom": "70",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d00e8",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "s-promo__head"
+       },
+       "elements": [
+        {
+         "id": "04d00e7",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Our <span class=\"ik-or\">Promotions</span>",
+          "header_size": "h2",
+          "_css_classes": "s-promo__t"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "04d012a",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "ik-car"
+       },
+       "elements": [
+        {
+         "id": "04d0129",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "css_classes": "ik-car__tr"
+         },
+         "elements": [
+          {
+           "id": "04d00f5",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it ik-pcard"
+           },
+           "elements": [
+            {
+             "id": "04d00eb",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_promo-01-lg__",
+               "id": "__ID_promo-01-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "custom",
+              "link": {
+               "url": "#quote",
+               "is_external": "",
+               "nofollow": "",
+               "custom_attributes": ""
+              },
+              "_css_classes": "ik-pcard__img"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d00f4",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-pcard__body"
+             },
+             "elements": [
+              {
+               "id": "04d00f0",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__top"
+               },
+               "elements": [
+                {
+                 "id": "04d00ec",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__txt"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d00e9",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "Full <span class=\"ik-or\">Chest</span>",
+                    "header_size": "h3",
+                    "_css_classes": "ik-pcard__t"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d00ea",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>In one sitting</p>",
+                    "_css_classes": "ik-pcard__s"
+                   },
+                   "elements": []
+                  }
+                 ]
+                },
+                {
+                 "id": "04d00ef",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__price"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d00ed",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>$2500</p>",
+                    "_css_classes": "ik-pcard__old"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d00ee",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "$1000",
+                    "header_size": "h4",
+                    "_css_classes": "ik-pcard__new"
+                   },
+                   "elements": []
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "04d00f3",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__foot"
+               },
+               "elements": [
+                {
+                 "id": "04d00f1",
+                 "elType": "widget",
+                 "widgetType": "text-editor",
+                 "settings": {
+                  "editor": "<p>Limited time offer</p>",
+                  "_css_classes": "ik-pcard__lim"
+                 },
+                 "elements": []
+                },
+                {
+                 "id": "04d00f2",
+                 "elType": "widget",
+                 "widgetType": "button",
+                 "settings": {
+                  "text": "",
+                  "link": {
+                   "url": "#quote",
+                   "is_external": "",
+                   "nofollow": "",
+                   "custom_attributes": ""
+                  },
+                  "selected_icon": {
+                   "value": "fas fa-arrow-right",
+                   "library": "fa-solid"
+                  },
+                  "icon_align": "row-reverse",
+                  "_css_classes": "ik-pcard__go"
+                 },
+                 "elements": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "id": "04d0102",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it ik-pcard"
+           },
+           "elements": [
+            {
+             "id": "04d00f8",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_promo-02-lg__",
+               "id": "__ID_promo-02-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "custom",
+              "link": {
+               "url": "#quote",
+               "is_external": "",
+               "nofollow": "",
+               "custom_attributes": ""
+              },
+              "_css_classes": "ik-pcard__img"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d0101",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-pcard__body"
+             },
+             "elements": [
+              {
+               "id": "04d00fd",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__top"
+               },
+               "elements": [
+                {
+                 "id": "04d00f9",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__txt"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d00f6",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "Full <span class=\"ik-or\">Outer Sleeve</span>",
+                    "header_size": "h3",
+                    "_css_classes": "ik-pcard__t"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d00f7",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>In two sittings</p>",
+                    "_css_classes": "ik-pcard__s"
+                   },
+                   "elements": []
+                  }
+                 ]
+                },
+                {
+                 "id": "04d00fc",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__price"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d00fa",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>$2500</p>",
+                    "_css_classes": "ik-pcard__old"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d00fb",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "$1500",
+                    "header_size": "h4",
+                    "_css_classes": "ik-pcard__new"
+                   },
+                   "elements": []
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "04d0100",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__foot"
+               },
+               "elements": [
+                {
+                 "id": "04d00fe",
+                 "elType": "widget",
+                 "widgetType": "text-editor",
+                 "settings": {
+                  "editor": "<p>Limited time offer</p>",
+                  "_css_classes": "ik-pcard__lim"
+                 },
+                 "elements": []
+                },
+                {
+                 "id": "04d00ff",
+                 "elType": "widget",
+                 "widgetType": "button",
+                 "settings": {
+                  "text": "",
+                  "link": {
+                   "url": "#quote",
+                   "is_external": "",
+                   "nofollow": "",
+                   "custom_attributes": ""
+                  },
+                  "selected_icon": {
+                   "value": "fas fa-arrow-right",
+                   "library": "fa-solid"
+                  },
+                  "icon_align": "row-reverse",
+                  "_css_classes": "ik-pcard__go"
+                 },
+                 "elements": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "id": "04d010f",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it ik-pcard"
+           },
+           "elements": [
+            {
+             "id": "04d0105",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_promo-03-lg__",
+               "id": "__ID_promo-03-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "custom",
+              "link": {
+               "url": "#quote",
+               "is_external": "",
+               "nofollow": "",
+               "custom_attributes": ""
+              },
+              "_css_classes": "ik-pcard__img"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d010e",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-pcard__body"
+             },
+             "elements": [
+              {
+               "id": "04d010a",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__top"
+               },
+               "elements": [
+                {
+                 "id": "04d0106",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__txt"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d0103",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "Full <span class=\"ik-or\">Upper Back</span>",
+                    "header_size": "h3",
+                    "_css_classes": "ik-pcard__t"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d0104",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>In one sitting</p>",
+                    "_css_classes": "ik-pcard__s"
+                   },
+                   "elements": []
+                  }
+                 ]
+                },
+                {
+                 "id": "04d0109",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__price"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d0107",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>$2500</p>",
+                    "_css_classes": "ik-pcard__old"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d0108",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "$1000",
+                    "header_size": "h4",
+                    "_css_classes": "ik-pcard__new"
+                   },
+                   "elements": []
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "04d010d",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__foot"
+               },
+               "elements": [
+                {
+                 "id": "04d010b",
+                 "elType": "widget",
+                 "widgetType": "text-editor",
+                 "settings": {
+                  "editor": "<p>Limited time offer</p>",
+                  "_css_classes": "ik-pcard__lim"
+                 },
+                 "elements": []
+                },
+                {
+                 "id": "04d010c",
+                 "elType": "widget",
+                 "widgetType": "button",
+                 "settings": {
+                  "text": "",
+                  "link": {
+                   "url": "#quote",
+                   "is_external": "",
+                   "nofollow": "",
+                   "custom_attributes": ""
+                  },
+                  "selected_icon": {
+                   "value": "fas fa-arrow-right",
+                   "library": "fa-solid"
+                  },
+                  "icon_align": "row-reverse",
+                  "_css_classes": "ik-pcard__go"
+                 },
+                 "elements": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "id": "04d011b",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it ik-pcard"
+           },
+           "elements": [
+            {
+             "id": "04d0111",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_promo-04-lg__",
+               "id": "__ID_promo-04-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "custom",
+              "link": {
+               "url": "#quote",
+               "is_external": "",
+               "nofollow": "",
+               "custom_attributes": ""
+              },
+              "_css_classes": "ik-pcard__img"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d011a",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-pcard__body"
+             },
+             "elements": [
+              {
+               "id": "04d0116",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__top"
+               },
+               "elements": [
+                {
+                 "id": "04d0112",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__txt"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d0110",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "Floral <span class=\"ik-or\">Full Sleeve</span>",
+                    "header_size": "h3",
+                    "_css_classes": "ik-pcard__t"
+                   },
+                   "elements": []
+                  }
+                 ]
+                },
+                {
+                 "id": "04d0115",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__price"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d0113",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>$3500</p>",
+                    "_css_classes": "ik-pcard__old"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d0114",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "$1500",
+                    "header_size": "h4",
+                    "_css_classes": "ik-pcard__new"
+                   },
+                   "elements": []
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "04d0119",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__foot"
+               },
+               "elements": [
+                {
+                 "id": "04d0117",
+                 "elType": "widget",
+                 "widgetType": "text-editor",
+                 "settings": {
+                  "editor": "<p>Limited time offer</p>",
+                  "_css_classes": "ik-pcard__lim"
+                 },
+                 "elements": []
+                },
+                {
+                 "id": "04d0118",
+                 "elType": "widget",
+                 "widgetType": "button",
+                 "settings": {
+                  "text": "",
+                  "link": {
+                   "url": "#quote",
+                   "is_external": "",
+                   "nofollow": "",
+                   "custom_attributes": ""
+                  },
+                  "selected_icon": {
+                   "value": "fas fa-arrow-right",
+                   "library": "fa-solid"
+                  },
+                  "icon_align": "row-reverse",
+                  "_css_classes": "ik-pcard__go"
+                 },
+                 "elements": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "id": "04d0128",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "ik-car__it ik-pcard"
+           },
+           "elements": [
+            {
+             "id": "04d011e",
+             "elType": "widget",
+             "widgetType": "image",
+             "settings": {
+              "image": {
+               "url": "__URL_promo-05-lg__",
+               "id": "__ID_promo-05-lg__",
+               "source": "library"
+              },
+              "image_size": "full",
+              "link_to": "custom",
+              "link": {
+               "url": "#quote",
+               "is_external": "",
+               "nofollow": "",
+               "custom_attributes": ""
+              },
+              "_css_classes": "ik-pcard__img"
+             },
+             "elements": []
+            },
+            {
+             "id": "04d0127",
+             "elType": "container",
+             "isInner": true,
+             "settings": {
+              "content_width": "full",
+              "flex_direction": "column",
+              "css_classes": "ik-pcard__body"
+             },
+             "elements": [
+              {
+               "id": "04d0123",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__top"
+               },
+               "elements": [
+                {
+                 "id": "04d011f",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__txt"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d011c",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "Full <span class=\"ik-or\">Lower Leg</span>",
+                    "header_size": "h3",
+                    "_css_classes": "ik-pcard__t"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d011d",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>In two sittings</p>",
+                    "_css_classes": "ik-pcard__s"
+                   },
+                   "elements": []
+                  }
+                 ]
+                },
+                {
+                 "id": "04d0122",
+                 "elType": "container",
+                 "isInner": true,
+                 "settings": {
+                  "content_width": "full",
+                  "flex_direction": "column",
+                  "css_classes": "ik-pcard__price"
+                 },
+                 "elements": [
+                  {
+                   "id": "04d0120",
+                   "elType": "widget",
+                   "widgetType": "text-editor",
+                   "settings": {
+                    "editor": "<p>$3500</p>",
+                    "_css_classes": "ik-pcard__old"
+                   },
+                   "elements": []
+                  },
+                  {
+                   "id": "04d0121",
+                   "elType": "widget",
+                   "widgetType": "heading",
+                   "settings": {
+                    "title": "$1500",
+                    "header_size": "h4",
+                    "_css_classes": "ik-pcard__new"
+                   },
+                   "elements": []
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "04d0126",
+               "elType": "container",
+               "isInner": true,
+               "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "css_classes": "ik-pcard__foot"
+               },
+               "elements": [
+                {
+                 "id": "04d0124",
+                 "elType": "widget",
+                 "widgetType": "text-editor",
+                 "settings": {
+                  "editor": "<p>Limited time offer</p>",
+                  "_css_classes": "ik-pcard__lim"
+                 },
+                 "elements": []
+                },
+                {
+                 "id": "04d0125",
+                 "elType": "widget",
+                 "widgetType": "button",
+                 "settings": {
+                  "text": "",
+                  "link": {
+                   "url": "#quote",
+                   "is_external": "",
+                   "nofollow": "",
+                   "custom_attributes": ""
+                  },
+                  "selected_icon": {
+                   "value": "fas fa-arrow-right",
+                   "library": "fa-solid"
+                  },
+                  "icon_align": "row-reverse",
+                  "_css_classes": "ik-pcard__go"
+                 },
+                 "elements": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d0133",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-quote",
+    "_element_id": "quote"
+   },
+   "elements": [
+    {
+     "id": "04d012d",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_quote-machine__",
+       "id": "__ID_quote-machine__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "s-quote__img"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d0132",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "108",
+       "bottom": "96",
+       "left": "108",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "112",
+       "right": "76",
+       "bottom": "96",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "130",
+       "right": "54",
+       "bottom": "84",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d0131",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "s-quote__txt"
+       },
+       "elements": [
+        {
+         "id": "04d012e",
+         "elType": "widget",
+         "widgetType": "heading",
+         "settings": {
+          "title": "Get a <strong>Quotation</strong>",
+          "header_size": "h2",
+          "_css_classes": "s-quote__h"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d012f",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "settings": {
+          "editor": "<p>Have a tattoo idea in mind? Send us your design and we’ll get back to you with a personalised quote.</p>",
+          "_css_classes": "s-quote__p"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d0130",
+         "elType": "widget",
+         "widgetType": "button",
+         "settings": {
+          "text": "Contact Us",
+          "link": {
+           "url": "mailto:inko.melbourne@gmail.com?subject=Tattoo%20quotation%20request",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "selected_icon": {
+           "value": "fas fa-arrow-right",
+           "library": "fa-solid"
+          },
+          "icon_align": "row-reverse",
+          "_css_classes": "ik-btn ik-btn--solid"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "04d0140",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "flex_direction": "column",
+    "css_classes": "ik-scope ik-slide s-foot ik-frame",
+    "_element_id": "footer"
+   },
+   "elements": [
+    {
+     "id": "04d0134",
+     "elType": "widget",
+     "widgetType": "image",
+     "settings": {
+      "image": {
+       "url": "__URL_bg-footer__",
+       "id": "__ID_bg-footer__",
+       "source": "library"
+      },
+      "image_size": "full",
+      "link_to": "none",
+      "_css_classes": "ik-slide__bg "
+     },
+     "elements": []
+    },
+    {
+     "id": "04d0135",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-scope ik-shade"
+     },
+     "elements": []
+    },
+    {
+     "id": "04d013f",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "css_classes": "ik-slide__inner",
+      "padding": {
+       "unit": "px",
+       "top": "116",
+       "right": "108",
+       "bottom": "96",
+       "left": "108",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "112",
+       "right": "76",
+       "bottom": "96",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "130",
+       "right": "54",
+       "bottom": "84",
+       "left": "22",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "04d0136",
+       "elType": "widget",
+       "widgetType": "image",
+       "settings": {
+        "image": {
+         "url": "__URL_logo-footer__",
+         "id": "__ID_logo-footer__",
+         "source": "library"
+        },
+        "image_size": "full",
+        "link_to": "none",
+        "_css_classes": "s-foot__logo"
+       },
+       "elements": []
+      },
+      {
+       "id": "04d0137",
+       "elType": "widget",
+       "widgetType": "heading",
+       "settings": {
+        "title": "INKO Melbourne Tattoo Studio",
+        "header_size": "h2",
+        "_css_classes": "s-foot__name"
+       },
+       "elements": []
+      },
+      {
+       "id": "04d013e",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "s-foot__cols"
+       },
+       "elements": [
+        {
+         "id": "04d013a",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-foot__col"
+         },
+         "elements": [
+          {
+           "id": "04d0138",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "Location",
+            "header_size": "h3",
+            "_css_classes": "s-foot__h"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d0139",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p>1c Cookson Street <br>Camberwell, VIC 3142</p>",
+            "_css_classes": "s-foot__txt"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "04d013d",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "css_classes": "s-foot__col"
+         },
+         "elements": [
+          {
+           "id": "04d013b",
+           "elType": "widget",
+           "widgetType": "heading",
+           "settings": {
+            "title": "Contact",
+            "header_size": "h3",
+            "_css_classes": "s-foot__h"
+           },
+           "elements": []
+          },
+          {
+           "id": "04d013c",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "settings": {
+            "editor": "<p><a href=\"mailto:inko.melbourne@gmail.com\">inko.melbourne@gmail.com</a><br><a href=\"tel:+61481082077\">(+61) 481-082077</a></p>",
+            "_css_classes": "s-foot__txt"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

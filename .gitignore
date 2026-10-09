@@ -1,0 +1,38 @@
+# --- Secrets / environment (never commit) ---
+wp-config.php
+.env
+.env.*
+.envrc
+*.pem
+*.key
+
+# --- Database dumps & backups ---
+*.sql
+*.sql.gz
+*.sqlite
+*.db
+*.bak
+*.wpress
+
+# --- LocalWP runtime, logs, caches (root-anchored so site/ assets are never caught) ---
+/conf/
+/logs/
+/app/
+*.log
+.cache/
+temp-files/
+
+# --- Dependencies / tooling ---
+node_modules/
+/vendor/
+.vercel/
+
+# --- Archives ---
+*.zip
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

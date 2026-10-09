@@ -1,0 +1,121 @@
+/* INKO Melbourne - header, menu overlay, side rails, slide counter, scroll cue (theme components, rendered by header.php) */
+:root{--ex:clamp(24px,4.2vw,64px)}
+.ik-header{position:fixed;top:0;left:0;right:0;height:var(--hdr);z-index:60;display:flex;align-items:center;justify-content:space-between;padding:0 calc(var(--ex) - 7px) 0 var(--ex);pointer-events:none}
+.ik-header>*{pointer-events:auto}
+.ik-logo{display:block;width:92px;line-height:0}
+.ik-logo[hidden]{display:none!important}
+.ik-logo img{display:block;width:100%;height:auto}
+.ik-logo--box{display:none}
+.ik-header.is-hero .ik-logo--plain{display:none}
+.ik-header.is-hero .ik-logo--box{display:block;width:clamp(120px,11vw,210px);align-self:flex-start;transform:translateX(calc(var(--ex) * -1))}
+.ik-nav{display:flex;gap:clamp(22px,3.2vw,52px);position:absolute;left:50%;transform:translateX(-50%)}
+.ik-nav__a a{position:relative;display:block;font:600 12.5px/1 var(--f-body);letter-spacing:.2em;text-transform:uppercase;padding:8px 0;color:var(--white);opacity:.92;transition:color .3s}
+.ik-nav__a a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.ik-nav__a a[aria-current="true"],.ik-nav__a a:hover{color:var(--orange)}
+.ik-nav__a a[aria-current="true"]::after{transform:scaleX(1)}
+.ik-actions{display:flex;align-items:center;gap:clamp(18px,2.4vw,40px)}
+.ik-hbtn{display:inline-flex;align-items:center;font:700 12.5px/1 var(--f-body);letter-spacing:.2em;text-transform:uppercase;padding:14px 26px;border:1.5px solid var(--orange);color:var(--orange);border-radius:3px;transition:background .3s,color .3s;white-space:nowrap}
+.ik-hbtn:hover{background:var(--orange);color:#111}
+.ik-burger{width:44px;height:44px;display:grid;place-content:center;gap:7px;background:none;border:0;cursor:pointer;padding:0}
+.ik-burger i{display:block;width:30px;height:2px;background:var(--white);transition:transform .35s var(--ease),opacity .2s}
+.ik-burger[aria-expanded="true"] i:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.ik-burger[aria-expanded="true"] i:nth-child(2){opacity:0}
+.ik-burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+/* menu overlay */
+.ik-menu{position:fixed;inset:0;z-index:55;background:var(--black);display:flex;flex-direction:column;justify-content:center;padding:calc(var(--hdr) + 10px) var(--padx) 40px;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.ik-menu.is-open{opacity:1;visibility:visible}
+.ik-menu__links{list-style:none;margin:0;padding:0;display:grid;gap:clamp(6px,1.6vh,18px);counter-reset:ikm}
+.ik-menu__a a{display:flex;align-items:baseline;gap:18px;font:800 clamp(34px,7vh,72px)/1.05 var(--f-disp);text-transform:uppercase;letter-spacing:-.01em;color:var(--white);transition:color .25s,transform .35s var(--ease)}
+.ik-menu__a a::before{counter-increment:ikm;content:"0" counter(ikm);font:600 12px var(--f-body);letter-spacing:.2em;color:var(--orange)}
+.ik-menu__a a:hover,.ik-menu__a a[aria-current="true"]{color:var(--orange);transform:translateX(10px)}
+.ik-menu__foot{margin-top:clamp(24px,5vh,56px);display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;color:var(--muted);font-size:14px}
+.ik-menu__foot a{color:var(--muted)}.ik-menu__foot a:hover{color:var(--white)}
+.ik-socials-row{display:flex;gap:12px}
+.ik-socials-row a{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;transition:border-color .3s}
+.ik-socials-row a:hover{border-color:var(--orange)}
+.ik-socials-row img{width:18px;height:18px}
+/* side label + rail */
+.ik-label{position:fixed;left:var(--ex);top:clamp(150px,19vh,190px);z-index:40;border-left:3px solid var(--orange);padding-left:14px;pointer-events:none}
+.ik-label p{margin:0;font-size:11px;font-weight:600;letter-spacing:.24em;line-height:1.75;text-transform:uppercase;color:rgba(244,241,236,.72)}
+.ik-rail{position:fixed;right:var(--ex);top:50%;transform:translateY(-54%);z-index:40;display:flex;flex-direction:column;align-items:center;gap:16px}
+.ik-rail::before{content:"";width:1px;height:clamp(40px,8vh,90px);background:rgba(244,241,236,.6)}
+.ik-rail__t{writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px/1 var(--f-body);letter-spacing:.26em;text-transform:uppercase;color:rgba(244,241,236,.7)}
+.ik-rail a{display:block;line-height:0}
+.ik-rail img{width:18px;height:18px;opacity:.95;transition:opacity .3s}
+.ik-rail a:hover img{opacity:.6}
+/* slide counter + scroll cue */
+.ik-count{position:fixed;left:var(--ex);bottom:clamp(28px,5.4vh,52px);z-index:40;display:flex;gap:clamp(12px,1.5vw,24px);list-style:none;padding:0;margin:0}
+.ik-count button{position:relative;font:500 13px var(--f-body);letter-spacing:.14em;color:rgba(244,241,236,.42);padding:6px 2px 10px;transition:color .3s;background:none;border:0;cursor:pointer}
+.ik-count button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.ik-count button[aria-current="true"]{color:var(--orange);font-weight:700}
+.ik-count button[aria-current="true"]::after{transform:scaleX(1)}
+.ik-count button:hover{color:var(--white)}
+.ik-cue{position:fixed;right:calc(var(--ex) - 28px);bottom:clamp(24px,4.4vh,44px);z-index:40;display:flex;flex-direction:column;align-items:center;gap:10px;font:600 11px var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:rgba(244,241,236,.75);background:none;border:0;cursor:pointer}
+.ik-cue::after{content:"";width:1px;height:30px;background:rgba(244,241,236,.6);order:1}
+.ik-cue svg{order:2;width:26px;height:26px;stroke:var(--orange);fill:none;stroke-width:2.4;animation:ikbob 2.4s var(--ease) infinite}
+.ik-cue.is-end svg{transform:rotate(180deg);animation:none}
+@keyframes ikbob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+/* header responsive (V3: Book Now, rail, label and the full counter stay on every device, as in the references) */
+@media (max-width:1180px){
+  :root{--hdr:80px}
+  .ik-nav{gap:22px}.ik-nav__a a{font-size:11.5px;letter-spacing:.16em}.ik-hbtn{padding:12px 20px;font-size:11.5px}
+  .ik-logo--box{display:none!important}
+  .ik-logo--plain[hidden]{display:block!important}
+  .ik-logo{width:84px}
+}
+@media (max-width:980px){
+  .ik-nav{display:none}
+  :root{--ex:clamp(22px,4.4vw,36px)}
+  .ik-header{padding:0 calc(var(--ex) - 7px) 0 var(--ex)}
+  .ik-actions{gap:14px}
+  .ik-label{top:calc(var(--hdr) + 22px)}
+  .ik-label p{font-size:10.5px}
+  .ik-rail{gap:12px}.ik-rail::before{height:clamp(28px,6vh,60px)}
+  .ik-rail__t{font-size:10px}
+  .ik-rail img{width:17px;height:17px}
+  .ik-cue{right:var(--ex)}
+  .ik-count{gap:11px}
+  .ik-count button{font-size:11.5px}
+}
+@media (max-width:700px){
+  :root{--hdr:68px;--ex:20px}
+  .ik-logo{width:76px}
+  .ik-hbtn{padding:9px 13px;font-size:10px;letter-spacing:.14em}
+  .ik-actions{gap:8px}
+  .ik-burger{width:38px}.ik-burger i{width:26px}
+  .ik-label{top:calc(var(--hdr) + 12px)}
+  .ik-label p{font-size:9px;line-height:1.55}
+  .ik-rail img{width:16px;height:16px}
+  .ik-count{gap:7px;bottom:26px}
+  .ik-count button{font-size:10.5px;letter-spacing:.06em;padding:6px 1px 8px}
+  .ik-cue{bottom:20px}
+}
+@media (prefers-reduced-motion:reduce){.ik-cue svg{animation:none}.ik-menu{transition:none}}
+/* only the theme-rendered header chrome is shown; leftover Elementor-built copies (older templates) are hidden on the live site */
+body:not(.elementor-editor-active):not(.elementor-editor-preview) .elementor .ik-header,
+body:not(.elementor-editor-active):not(.elementor-editor-preview) .elementor .ik-menu,
+body:not(.elementor-editor-active):not(.elementor-editor-preview) .elementor .ik-label,
+body:not(.elementor-editor-active):not(.elementor-editor-preview) .elementor .ik-rail,
+body:not(.elementor-editor-active):not(.elementor-editor-preview) .elementor .ik-count,
+body:not(.elementor-editor-active):not(.elementor-editor-preview) .elementor .ik-cue,
+body:not(.elementor-editor-active):not(.elementor-editor-preview) .elementor .ik-ui{display:none!important}
+/* ================= MOBILE HEADER (<=767px) - one header system for all 12 slides =================
+   [ logo ] ............................ [ Book Now ][ menu ]
+   - slide 01 uses the same header as slides 02-12: the desktop hero logo (box version, translateX, top-aligned)
+     and the is-hero/[hidden] logo toggling never apply on mobile
+   - Book Now + burger live in one non-shrinking action group pushed to the right edge; only the logo may give way
+   - side padding keeps the existing values and respects the notch / rounded-corner safe areas
+   - the (hidden) burger menu must never be wider than the screen: its overflow widened the layout viewport on
+     narrow phones, which dragged the full-width fixed header (and Book Now / burger) past the right edge */
+@media (max-width:767px){
+  .ik-header,.ik-header.is-hero{display:flex;align-items:center;justify-content:space-between;left:0;right:0;width:auto;max-width:100%;box-sizing:border-box;transform:none;
+    height:calc(var(--hdr) + env(safe-area-inset-top));padding-top:env(safe-area-inset-top);padding-bottom:0;
+    padding-left:max(var(--ex),env(safe-area-inset-left));padding-right:max(calc(var(--ex) - 7px),env(safe-area-inset-right))}
+  .ik-header .ik-logo--box,.ik-header.is-hero .ik-logo--box{display:none!important}
+  .ik-header .ik-logo--plain,.ik-header.is-hero .ik-logo--plain,.ik-header .ik-logo--plain[hidden]{display:block!important;flex:0 1 auto;min-width:0;align-self:center;margin:0;transform:none}
+  .ik-header .ik-actions{display:flex;align-items:center;flex:0 0 auto;margin-left:auto}
+  .ik-header .ik-hbtn,.ik-header .ik-burger{flex:0 0 auto}
+  .ik-header .ik-hbtn{white-space:nowrap}
+  .ik-menu{overflow-x:hidden}
+  .ik-menu__a a{font-size:min(clamp(34px,7vh,72px),calc((100vw - 54px) / 5.7))}
+}

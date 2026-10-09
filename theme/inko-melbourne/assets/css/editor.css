@@ -1,0 +1,16 @@
+/* INKO Melbourne - Elementor editor mode: slides become a normal vertical stack so every widget stays clickable/editable */
+body.elementor-editor-active .ik-scope.ik-slide,body.elementor-editor-preview .ik-scope.ik-slide{position:relative!important;inset:auto;transform:none!important;visibility:visible!important;height:auto;min-height:100vh;contain:none;overflow:hidden}
+body.elementor-editor-active .ik-header,body.elementor-editor-active .ik-menu,body.elementor-editor-active .ik-label,body.elementor-editor-active .ik-rail,
+body.elementor-editor-preview .ik-header,body.elementor-editor-preview .ik-menu,body.elementor-editor-preview .ik-label,body.elementor-editor-preview .ik-rail{position:relative!important;inset:auto;transform:none;opacity:1;visibility:visible;height:auto;background:#15191f;padding:14px 24px;pointer-events:auto}
+body.elementor-editor-active .ik-header .ik-logo--box,body.elementor-editor-active .ik-header .ik-logo--plain{display:block;width:90px;transform:none}
+body.elementor-editor-active .ik-nav{position:static;transform:none}
+body.elementor-editor-active .ik-menu{display:none}
+body.elementor-editor-active .ik-count,body.elementor-editor-active .ik-count--mini,body.elementor-editor-active .ik-cue,body.elementor-editor-active .ik-track{display:none}
+body.elementor-editor-active .ik-car__tr{flex-wrap:wrap;transform:none}
+body.elementor-editor-active .ik-scope .ik-car__it{flex:1 1 30%;width:auto!important;min-width:220px}
+/* decorative overlays/ghost headings must still be clickable in the editor */
+body.elementor-editor-active .ik-slide,body.elementor-editor-active .ik-slide *,body.elementor-editor-preview .ik-slide,body.elementor-editor-preview .ik-slide *{pointer-events:auto!important}
+body.elementor-editor-active .ik-scope .ik-team,body.elementor-editor-preview .ik-scope .ik-team{position:relative;inset:auto;opacity:1;visibility:visible;padding:24px 0}
+body.elementor-editor-active .s-art__ph,body.elementor-editor-preview .s-art__ph{position:relative!important;left:auto!important;right:auto!important;top:auto!important;transform:none!important;opacity:1!important;height:260px!important;display:inline-block}
+body.elementor-editor-active .s-art__stack{display:flex;flex-wrap:wrap;gap:10px;min-height:0}
+body.elementor-editor-active .s-art__ring{display:none}
