@@ -1781,10 +1781,10 @@
           "image_size": "full",
           "link_to": "custom",
           "link": {
-           "url": "#",
-           "is_external": "",
+           "url": "https://www.tiktok.com/@inko.melbourne?_r=1&_t=ZS-9AgJRaJcvlk",
+           "is_external": "on",
            "nofollow": "",
-           "custom_attributes": ""
+           "custom_attributes": "rel|noopener noreferrer"
           }
          },
          "elements": []
@@ -1802,10 +1802,10 @@
           "image_size": "full",
           "link_to": "custom",
           "link": {
-           "url": "#",
-           "is_external": "",
+           "url": "https://youtube.com/@inko-b5s?si=r4qYbwGlXBcjs4s2",
+           "is_external": "on",
            "nofollow": "",
-           "custom_attributes": ""
+           "custom_attributes": "rel|noopener noreferrer"
           }
          },
          "elements": []
@@ -1823,10 +1823,10 @@
           "image_size": "full",
           "link_to": "custom",
           "link": {
-           "url": "#",
-           "is_external": "",
+           "url": "https://www.threads.com/@inko_melbourne",
+           "is_external": "on",
            "nofollow": "",
-           "custom_attributes": ""
+           "custom_attributes": "rel|noopener noreferrer"
           }
          },
          "elements": []

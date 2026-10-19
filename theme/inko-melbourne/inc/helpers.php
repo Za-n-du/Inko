@@ -89,9 +89,9 @@ function inko_socials() {
 	$defaults = array(
 		'facebook'  => 'https://www.facebook.com/inkomelbourne/',
 		'instagram' => 'https://www.instagram.com/inko_melbourne/',
-		'tiktok'    => '',
-		'youtube'   => '',
-		'threads'   => '',
+		'tiktok'    => 'https://www.tiktok.com/@inko.melbourne?_r=1&_t=ZS-9AgJRaJcvlk',
+		'youtube'   => 'https://youtube.com/@inko-b5s?si=r4qYbwGlXBcjs4s2',
+		'threads'   => 'https://www.threads.com/@inko_melbourne',
 	);
 	$labels = array(
 		'facebook'  => 'Facebook',
