@@ -1,0 +1,6 @@
+{
+  "name": "inko-melbourne-v3",
+  "private": true,
+  "type": "module",
+  "description": "Static INKO Melbourne site (site/) plus the quotation form function (api/quote.js). No dependencies."
+}

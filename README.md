@@ -33,6 +33,29 @@ This repository contains two things:
 
 The pages use root-relative URLs (`/wp-content/...`), so the site must be served from the domain root (a normal Vercel domain or a custom domain both work).
 
+## Quotation form
+
+The **GET A QUOTATION** button on the quote slide opens `/quote/` (`site/quote/`). The form posts to `/api/quote`
+(`api/quote.js`), a Vercel serverless function that validates the request, checks the uploaded file's real type
+(JPG, PNG, WEBP, HEIC or PDF, max 4 MB), and emails it to the studio through [Resend](https://resend.com) with the
+file attached and **Reply-To** set to the client. The page shows "Thank you" only after Resend accepts the email.
+
+Setup (required before the form can deliver anything):
+
+1. Create a free Resend account **using the studio email** (`inko.melbourne@gmail.com`). Without a verified domain,
+   Resend's test sender can only deliver to the account owner's address.
+2. In Resend, open **API Keys → Create API Key** (permission: *Sending access*) and copy the key.
+3. In Vercel, open the project's **Settings → Environment Variables**, add `RESEND_API_KEY` with that key for
+   *Production* (and *Preview* if wanted), then redeploy.
+4. Send one test request from the live `/quote/` page and confirm it arrives in the studio inbox.
+
+Optional variables are listed in `.env.example` (`QUOTE_TO_EMAIL`, `QUOTE_FROM_EMAIL`). To send from an address like
+`quotes@inkomelbourne.com.au`, verify that domain in Resend and set `QUOTE_FROM_EMAIL`.
+
+The WordPress theme does not include this form. On a WordPress host, create a page with the slug `quote` using a form
+plugin (for example WPForms or Contact Form 7 with a file-upload field) plus an SMTP plugin for reliable delivery, then
+point the quote slide's button at `/quote/` in Elementor.
+
 ## Using the WordPress theme
 
 1. Zip the `theme/inko-melbourne` folder and upload it in **Appearance → Themes → Add New → Upload Theme**.

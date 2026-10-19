@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="theme-color" content="#090b0f">
+	<title>Get a Quotation – INKO Melbourne</title>
+	<meta name="description" content="Request a personalised tattoo quotation from INKO Melbourne Tattoo Studio, Camberwell.">
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link href="https://fonts.gstatic.com/" crossorigin="anonymous" rel="preconnect">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;700;800;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@700;800&amp;display=swap">
+	<link rel="stylesheet" href="/wp-content/themes/inko-melbourne/assets/css/base.css?ver=1791270636">
+	<link rel="stylesheet" href="/wp-content/themes/inko-melbourne/assets/css/header.css?ver=1791277518">
+	<link rel="stylesheet" href="/quote/quote.css?ver=1">
+</head>
+<body class="page ik-quote-page">
+<a class="skip-link screen-reader-text" href="#ik-main">Skip to content</a>
+<header class="ik-header" id="ik-header" role="banner">
+	<a class="ik-logo ik-logo--box" href="/" aria-label="INKO Melbourne Tattoo Studio" hidden>
+		<img fetchpriority="high" src="/wp-content/themes/inko-melbourne/assets/icons/logo-box.png" width="464" height="332" alt="INKO Melbourne Tattoo Studio">
+	</a>
+	<a class="ik-logo ik-logo--plain" href="/" aria-label="INKO Melbourne Tattoo Studio">
+		<img src="/wp-content/themes/inko-melbourne/assets/icons/logo-plain.png" width="400" height="268" alt="INKO Melbourne Tattoo Studio">
+	</a>
+	<nav class="ik-nav" aria-label="Primary">
+					<div class="ik-nav__a"><a href="/#home">Home</a></div>
+					<div class="ik-nav__a"><a href="/#artists">Artists</a></div>
+					<div class="ik-nav__a"><a href="/#fine-line">Our Work</a></div>
+					<div class="ik-nav__a"><a href="/#location">Studio</a></div>
+					<div class="ik-nav__a"><a href="/#quote">Contact</a></div>
+			</nav>
+	<div class="ik-actions">
+		<a class="ik-hbtn" href="/#quote">Book Now</a>
+		<button class="ik-burger" type="button" aria-expanded="false" aria-controls="ik-menu" aria-label="Open menu"><i></i><i></i><i></i></button>
+	</div>
+</header>
+<div class="ik-menu" id="ik-menu" role="dialog" aria-modal="true" aria-label="Menu">
+	<nav aria-label="Menu">
+		<ol class="ik-menu__links">
+							<li class="ik-menu__a"><a href="/#home">Home</a></li>
+							<li class="ik-menu__a"><a href="/#artists">Artists</a></li>
+							<li class="ik-menu__a"><a href="/#fine-line">Our Work</a></li>
+							<li class="ik-menu__a"><a href="/#location">Studio</a></li>
+							<li class="ik-menu__a"><a href="/#quote">Contact</a></li>
+					</ol>
+	</nav>
+	<div class="ik-menu__foot">
+		<a href="mailto:inko.melbourne@gmail.com">inko.melbourne@gmail.com</a>
+		<a href="tel:+61481082077">(+61) 481-082077</a>
+		<div class="ik-socials-row">
+							<a href="https://www.facebook.com/inkomelbourne/" aria-label="Facebook" target="_blank" rel="noopener"><img loading="lazy" src="/wp-content/themes/inko-melbourne/assets/icons/ic-facebook.png" width="96" height="96" alt=""></a>
+							<a href="https://www.instagram.com/inko_melbourne/" aria-label="Instagram" target="_blank" rel="noopener"><img loading="lazy" src="/wp-content/themes/inko-melbourne/assets/icons/ic-instagram.png" width="96" height="96" alt=""></a>
+							<a href="#" aria-label="TikTok"><img loading="lazy" src="/wp-content/themes/inko-melbourne/assets/icons/ic-tiktok.png" width="96" height="96" alt=""></a>
+							<a href="#" aria-label="YouTube"><img loading="lazy" src="/wp-content/themes/inko-melbourne/assets/icons/ic-youtube.png" width="96" height="96" alt=""></a>
+							<a href="#" aria-label="Threads"><img loading="lazy" src="/wp-content/themes/inko-melbourne/assets/icons/ic-threads.png" width="96" height="96" alt=""></a>
+					</div>
+	</div>
+</div>
+<main id="ik-main" class="ik-page">
+	<div class="ik-page__in">
+		<p class="q-eyebrow">Tattoo Studio Melbourne</p>
+		<h1>Get a <span>Quotation</span></h1>
+		<p class="q-intro">Have a tattoo idea in mind? Send us your design and we’ll get back to you with a personalised quote.</p>
+
+		<form class="q-form" id="quote-form" action="/api/quote" method="post" enctype="multipart/form-data" novalidate>
+			<p class="q-req-note"><span aria-hidden="true">*</span> Required field</p>
+
+			<fieldset class="q-field q-name">
+				<legend>Name <span class="q-req" aria-hidden="true">*</span></legend>
+				<div class="q-row">
+					<div class="q-sub">
+						<label for="q-first">First Name <span class="q-req" aria-hidden="true">*</span></label>
+						<input id="q-first" name="firstName" type="text" autocomplete="given-name" maxlength="80" required aria-describedby="q-first-err">
+						<p class="q-err" id="q-first-err"></p>
+					</div>
+					<div class="q-sub">
+						<label for="q-last">Last Name <span class="q-req" aria-hidden="true">*</span></label>
+						<input id="q-last" name="lastName" type="text" autocomplete="family-name" maxlength="80" required aria-describedby="q-last-err">
+						<p class="q-err" id="q-last-err"></p>
+					</div>
+				</div>
+			</fieldset>
+
+			<div class="q-field">
+				<label for="q-email">Email <span class="q-req" aria-hidden="true">*</span></label>
+				<input id="q-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="q-email-err">
+				<p class="q-err" id="q-email-err"></p>
+			</div>
+
+			<div class="q-field">
+				<label for="q-phone">Phone</label>
+				<input id="q-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" aria-describedby="q-phone-err">
+				<p class="q-err" id="q-phone-err"></p>
+			</div>
+
+			<div class="q-field">
+				<label for="q-file">File Upload</label>
+				<p class="q-hint" id="q-file-hint">Attach your tattoo reference or design: JPG, PNG, WEBP, HEIC or PDF, up to 4 MB.</p>
+				<div class="q-file">
+					<input id="q-file" name="file" type="file" accept=".jpg,.jpeg,.png,.webp,.heic,.heif,.pdf,image/jpeg,image/png,image/webp,image/heic,image/heif,application/pdf" aria-describedby="q-file-hint q-file-err">
+					<label for="q-file" class="q-file__btn">Choose file</label>
+					<span class="q-file__name" id="q-file-name">No file chosen</span>
+					<button type="button" class="q-file__clear" id="q-file-clear" hidden>Remove</button>
+				</div>
+				<p class="q-err" id="q-file-err"></p>
+			</div>
+
+			<div class="q-field">
+				<label for="q-details">Details <span class="q-req" aria-hidden="true">*</span></label>
+				<p class="q-hint" id="q-details-hint">Tell us the <strong>size</strong>, <strong>placement</strong> and <strong>color preference</strong> for your tattoo.</p>
+				<textarea id="q-details" name="details" rows="7" maxlength="5000" required aria-describedby="q-details-hint q-details-err" placeholder="Size: e.g. 10 cm x 6 cm&#10;Placement: e.g. left forearm&#10;Color preference: e.g. black &amp; grey"></textarea>
+				<p class="q-err" id="q-details-err"></p>
+			</div>
+
+			<div class="q-hp" aria-hidden="true">
+				<label for="q-website">Leave this field empty</label>
+				<input id="q-website" name="website" type="text" tabindex="-1" autocomplete="off">
+			</div>
+
+			<div class="q-status" id="q-status" role="alert" hidden></div>
+
+			<button class="q-send" type="submit">
+				<span class="q-send__txt">Send</span>
+				<svg aria-hidden="true" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg>
+			</button>
+		</form>
+
+		<div class="q-done" id="q-done" tabindex="-1" hidden>
+			<h2>Thank you!</h2>
+			<p>Your quotation request has been sent to INKO Melbourne. We’ll get back to you by email as soon as possible.</p>
+			<a class="ik-hbtn" href="/">Back to home</a>
+		</div>
+	</div>
+</main>
+<footer class="ik-simple-footer" role="contentinfo">
+	<strong>INKO Melbourne Tattoo Studio</strong>
+	<p>1c Cookson Street, Camberwell, VIC 3142</p>
+	<p><a href="mailto:inko.melbourne@gmail.com">inko.melbourne@gmail.com</a></p>
+	<p><a href="tel:+61481082077">(+61) 481-082077</a></p>
+</footer>
+<script defer src="/wp-content/themes/inko-melbourne/assets/js/slides.js?ver=1791275355"></script>
+<script defer src="/wp-content/themes/inko-melbourne/assets/js/navigation.js?ver=1791270636"></script>
+<script defer src="/wp-content/themes/inko-melbourne/assets/js/main.js?ver=1791313524"></script>
+<script defer src="/quote/quote.js?ver=1"></script>
+</body>
+</html>
