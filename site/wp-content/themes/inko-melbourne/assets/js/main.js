@@ -75,43 +75,115 @@
     var s = el.closest('.ik-slide'); if (s) s.__car = c;
   });
 
-  /* ---------- location gallery: Elementor image tiles, JS only swaps which tile is the big one ---------- */
+  /* ---------- location: one featured photo on the slide + "View location" gallery dialog ----------
+     The Elementor photo tiles (.s-loc__tile) stay the single source of the photos: the slide shows one of them large
+     (the storefront, loc-03, when present), the dialog shows all of them. Address and directions link are read from
+     the slide's own address card, so nothing is duplicated or invented. */
   var gal = $('.s-loc__gal');
-  if (gal) {
-    var tiles = $$('.s-loc__tile', gal), cur = 0, M = tiles.length;
-    var bp = document.createElement('button'), bn = document.createElement('button');
-    bp.type = bn.type = 'button';
-    bp.className = 'ik-arrow ik-arrow--p'; bn.className = 'ik-arrow ik-arrow--n';
-    bp.setAttribute('aria-label', 'Previous photo'); bn.setAttribute('aria-label', 'Next photo');
-    bp.innerHTML = ARROW_L; bn.innerHTML = ARROW_R;
-    gal.appendChild(bp); gal.appendChild(bn);
-    var stacked = window.matchMedia('(max-width:1180px)');
-    var place = function () {
-      var o = 0;
-      tiles.forEach(function (t, i) {
-        if (i === cur) { t.style.gridArea = stacked.matches ? '1 / 1 / 2 / 5' : '1 / 1 / 3 / 2'; t.setAttribute('aria-label', 'Current photo'); }
-        else {
-          t.style.gridArea = stacked.matches ? '2 / ' + (o + 1) + ' / 3 / ' + (o + 2) : (o === 0 ? '1 / 2 / 2 / 5' : '2 / ' + (o + 1) + ' / 3 / ' + (o + 2));
-          o++; t.setAttribute('aria-label', 'Show photo ' + (i + 1));
-        }
-        t.classList.remove('is-fade');
-      });
+  var locImgs = gal ? $$('.s-loc__tile img', gal) : [];
+  if (locImgs.length && window.HTMLDialogElement) {
+    var tiles = $$('.s-loc__tile', gal), LN = locImgs.length;
+    var feat = 0; locImgs.forEach(function (im, i) { if (/loc-03\b/.test(im.currentSrc || im.src)) feat = i; });
+    var lmk = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+    var ltwo = function (i) { return ('0' + (i + 1)).slice(-2); };
+    /* the slide: featured photo + button (the other tiles are hidden by CSS) */
+    gal.classList.add('is-hero'); tiles[feat].classList.add('is-main');
+    var locSlide = gal.closest('.ik-slide'); if (locSlide) locSlide.classList.add('has-loc-hero');
+    tiles.forEach(function (t, i) { if (i !== feat) t.setAttribute('aria-hidden', 'true'); });
+    var openBtn = lmk('button', 'ik-loc__open'); openBtn.type = 'button';
+    openBtn.innerHTML = '<span>View location</span><small>' + LN + ' photos</small>' + ARROW_R;
+    openBtn.setAttribute('aria-haspopup', 'dialog'); gal.appendChild(openBtn);
+    tiles[feat].addEventListener('click', function () { lOpen(openBtn); });
+    /* the dialog */
+    var addrEl = $('#location .s-loc__addr'), mapA = $('#location .s-loc__card .ik-btn a');
+    /* address card markup: <strong>studio name</strong><br>street, suburb */
+    var addrName = addrEl && $('strong', addrEl);
+    var addrLines = [addrName ? addrName.textContent.trim() : '', addrEl ? addrEl.textContent.replace(addrName ? addrName.textContent : '', '').replace(/\s+/g, ' ').trim() : ''];
+    var ld = lmk('dialog', 'ik-artdlg ik-locdlg'); ld.setAttribute('aria-labelledby', 'ik-locdlg-t');
+    ld.innerHTML =
+      '<div class="ik-artdlg__box ik-locdlg__box">' +
+        '<button type="button" class="ik-artdlg__x" aria-label="Close location photos"></button>' +
+        '<div class="ik-locdlg__head">' +
+          '<p class="ik-artdlg__eyebrow">Our location</p>' +
+          '<h2 class="ik-locdlg__t" id="ik-locdlg-t"></h2>' +
+          '<p class="ik-locdlg__addr"></p>' +
+          '<div class="ik-locdlg__meta"><p class="ik-artdlg__num" aria-hidden="true"><b></b><span></span></p></div>' +
+        '</div>' +
+        '<div class="ik-locdlg__stage"></div>' +
+        '<div class="ik-artdlg__bar">' +
+          '<button type="button" class="ik-artdlg__btn ik-artdlg__btn--p" aria-label="Previous photo">' + ARROW_L + '</button>' +
+          '<div class="ik-artdlg__tabs ik-locdlg__tabs" role="group" aria-label="Choose a photo"></div>' +
+          '<button type="button" class="ik-artdlg__btn ik-artdlg__btn--n" aria-label="Next photo">' + ARROW_R + '</button>' +
+        '</div>' +
+        '<p class="ik-artdlg__live ik-sr" aria-live="polite"></p>' +
+      '</div>';
+    document.body.appendChild(ld);
+    var lq = function (s) { return $(s, ld); };
+    lq('.ik-locdlg__t').textContent = addrLines[0] || 'INKO Melbourne';
+    lq('.ik-locdlg__addr').textContent = addrLines.slice(1).join(' ');
+    if (mapA) {
+      var dir = lmk('a', 'ik-locdlg__dir'); dir.href = mapA.href; dir.target = '_blank'; dir.rel = 'noopener';
+      dir.innerHTML = '<span>' + (mapA.textContent.trim() || 'Directions') + '</span>' + ARROW_R;
+      dir.setAttribute('aria-label', (mapA.textContent.trim() || 'Directions') + ' (Google Maps, opens in a new tab)');
+      lq('.ik-locdlg__meta').appendChild(dir);
+    }
+    var stage = lq('.ik-locdlg__stage'), ltabs = lq('.ik-locdlg__tabs'), lBtns = [], lcur = feat, lOpener = null, lScrollY = 0, lT;
+    locImgs.forEach(function (src, i) {
+      /* whole photo (contain) over a blurred copy of itself; a short note replaces a photo that fails to load */
+      var slot = lmk('figure', 'ik-locdlg__slot'), bg = src.cloneNode(false), im = src.cloneNode(false);
+      [bg, im].forEach(function (x) { x.removeAttribute('loading'); x.removeAttribute('class'); x.sizes = '(max-width:700px) 96vw, 80vw'; x.draggable = false; });
+      bg.alt = ''; bg.className = 'ik-artdlg__blur'; im.alt = src.alt || ('INKO Melbourne location, photo ' + (i + 1));
+      im.addEventListener('error', function () { slot.classList.add('is-broken'); });
+      slot.appendChild(bg); slot.appendChild(im); slot.appendChild(lmk('figcaption', 'ik-locdlg__err', 'This photo could not be loaded.'));
+      stage.appendChild(slot);
+      var b = lmk('button', 'ik-artdlg__tab ik-locdlg__tab'); b.type = 'button'; b.setAttribute('aria-label', 'Photo ' + (i + 1) + ' of ' + LN);
+      var tim = src.cloneNode(false); tim.removeAttribute('class'); tim.alt = ''; tim.sizes = '160px'; tim.setAttribute('loading', 'lazy');
+      b.appendChild(tim); b.appendChild(lmk('span', 'ik-artdlg__tnum', ltwo(i)));
+      b.addEventListener('click', function () { lShow(i); }); ltabs.appendChild(b); lBtns.push(b);
+    });
+    var lFill = function () {
+      lq('.ik-artdlg__num b').textContent = ltwo(lcur); lq('.ik-artdlg__num span').textContent = '/ ' + ltwo(LN - 1);
+      [].forEach.call(stage.children, function (s, i) { s.classList.toggle('is-on', i === lcur); });
+      lBtns.forEach(function (b, i) { if (i === lcur) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+      lq('.ik-artdlg__live').textContent = 'Photo ' + (lcur + 1) + ' of ' + LN;
     };
-    if (stacked.addEventListener) stacked.addEventListener('change', place);
-    var show = function (n) {
-      cur = (n + M) % M;
-      if (rm.matches) return place();
-      tiles.forEach(function (t) { t.classList.add('is-fade'); });
-      setTimeout(place, 220);
+    var lShow = function (i) {
+      var nx = ((i % LN) + LN) % LN; if (nx === lcur) return; lcur = nx;
+      clearTimeout(lT); lFill();
+      var on = lBtns[lcur]; if (on.scrollIntoView) on.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     };
-    tiles.forEach(function (t, i) { t.tabIndex = 0; t.setAttribute('role', 'button'); t.addEventListener('click', function () { if (i !== cur) show(i); }); t.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (i !== cur) show(i); } }); });
-    bp.addEventListener('click', function () { show(cur - 1); });
-    bn.addEventListener('click', function () { show(cur + 1); });
-    var sx = 0;
-    gal.addEventListener('pointerdown', function (e) { sx = e.clientX; });
-    gal.addEventListener('pointerup', function (e) { var dx = e.clientX - sx; if (Math.abs(dx) > 50 && e.target.closest('.s-loc__tile') === tiles[cur]) show(cur + (dx < 0 ? 1 : -1)); });
-    var ls = gal.closest('.ik-slide'); if (ls) ls.__car = { idx: 0, go: function (n) { show(cur + (n > 0 ? 1 : -1)); } };
-    place();
+    var lOpen = function (opener) {
+      if (ld.open) return;
+      lOpener = opener || document.activeElement; lScrollY = window.scrollY; lcur = feat;
+      lFill(); document.documentElement.classList.add('ik-dlg-open');
+      ld.showModal(); lq('.ik-artdlg__x').focus({ preventScroll: true });
+    };
+    var lClose = function () { if (ld.open) ld.close(); };
+    ld.addEventListener('close', function () {
+      document.documentElement.classList.remove('ik-dlg-open');
+      if (Math.abs(window.scrollY - lScrollY) > 1) window.scrollTo(0, lScrollY);
+      if (lOpener && lOpener.focus) lOpener.focus({ preventScroll: true });
+    });
+    openBtn.addEventListener('click', function () { lOpen(openBtn); });
+    lq('.ik-artdlg__x').addEventListener('click', lClose);
+    lq('.ik-artdlg__btn--p').addEventListener('click', function () { lShow(lcur - 1); });
+    lq('.ik-artdlg__btn--n').addEventListener('click', function () { lShow(lcur + 1); });
+    var lDown = false;
+    ld.addEventListener('pointerdown', function (e) { lDown = e.target === ld; });
+    ld.addEventListener('click', function (e) { if (e.target === ld && lDown) lClose(); lDown = false; });
+    ld.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); lShow(lcur + (e.key === 'ArrowRight' ? 1 : -1)); }
+      else if (e.key === 'Home') { e.preventDefault(); lShow(0); } else if (e.key === 'End') { e.preventDefault(); lShow(LN - 1); }
+      e.stopPropagation();
+    });
+    var lsx = null, lsy = 0;
+    stage.addEventListener('touchstart', function (e) { if (e.touches.length === 1) { lsx = e.touches[0].clientX; lsy = e.touches[0].clientY; } }, { passive: true });
+    stage.addEventListener('touchend', function (e) {
+      var t = e.changedTouches && e.changedTouches[0]; if (lsx === null || !t) return;
+      var dx = t.clientX - lsx, dy = t.clientY - lsy; lsx = null;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) lShow(lcur + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    api.on('change', function () { if (ld.open) lClose(); });
   }
 
 
@@ -205,18 +277,119 @@
     }
     var artSlide = stack.closest('.ik-slide'); if (artSlide) artSlide.__car = { idx: 0, go: function (n) { rot(n > 0 ? 1 : -1); } };
   }
+  /* ---------- "Meet the team": artist profile dialog (native <dialog>, opened from the hero's MEET THE TEAM button).
+     One record per artist, built from the two existing sources so photo and details can never drift apart:
+     the team cards in Elementor ("ik-team": name / AKA / role / bio, in their approved order) and the slide photo that
+     carries the matching "ik-artist-<name>" class. The Elementor team panel itself stays hidden as the data source. ---------- */
   var team = $('.ik-team');
-  if (team) {
-    var x = document.createElement('button'); x.type = 'button'; x.className = 'ik-team__x'; x.setAttribute('aria-label', 'Close team'); team.appendChild(x);
-    var openTeam = function () { team.classList.add('is-open'); var c = team.querySelector('.ik-car__tr'); team.__lastFocus = document.activeElement; x.focus({ preventScroll: true }); carousels.forEach(function (cc) { cc.layout(); }); };
-    var closeTeam = function () { team.classList.remove('is-open'); if (team.__lastFocus && team.__lastFocus.focus) team.__lastFocus.focus({ preventScroll: true }); };
-    x.addEventListener('click', closeTeam);
-    team.addEventListener('click', function (e) { if (e.target === team) closeTeam(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && team.classList.contains('is-open')) closeTeam(); });
+  var dlgList = [];
+  if (team && stack && window.HTMLDialogElement) {
+    $$('.ik-acard', team).forEach(function (c) {
+      var n = $('.ik-acard__n', c), key = n && slug(n.textContent), im = key && $('.s-art__ph.ik-artist-' + key + ' img', stack);
+      var t = function (k) { var e = $('.ik-acard__' + k, c); return e ? e.textContent.trim() : ''; };
+      if (im) dlgList.push({ key: key, name: t('n'), aka: t('a').replace(/^aka\s+/i, ''), role: t('r'), bio: t('d'), img: im });
+    });
+  }
+  if (dlgList.length) {
+    var D = dlgList.length, dcur = 0, dOpener = null, dScrollY = 0, dT;
+    var mk = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+    var two = function (i) { return ('0' + (i + 1)).slice(-2); };
+    var dlg = mk('dialog', 'ik-artdlg'); dlg.setAttribute('aria-labelledby', 'ik-artdlg-name');
+    dlg.innerHTML =
+      '<div class="ik-artdlg__box">' +
+        '<button type="button" class="ik-artdlg__x" aria-label="Close artist profiles"></button>' +
+        '<div class="ik-artdlg__main" data-ik-scroll>' +
+          '<figure class="ik-artdlg__ph"></figure>' +
+          '<div class="ik-artdlg__info">' +
+            '<p class="ik-artdlg__eyebrow">Meet our artists</p>' +
+            '<p class="ik-artdlg__num" aria-hidden="true"><b></b><span></span></p>' +
+            '<h2 class="ik-artdlg__name" id="ik-artdlg-name"></h2>' +
+            '<p class="ik-artdlg__aka">AKA <b></b></p>' +
+            '<p class="ik-artdlg__role"></p>' +
+            '<p class="ik-artdlg__bio"></p>' +
+            '<a class="ik-artdlg__cta" href="#fine-line"><span>View work</span>' + ARROW_R + '</a>' +
+          '</div>' +
+        '</div>' +
+        '<div class="ik-artdlg__bar">' +
+          '<button type="button" class="ik-artdlg__btn ik-artdlg__btn--p" aria-label="Previous artist">' + ARROW_L + '</button>' +
+          '<div class="ik-artdlg__tabs" role="group" aria-label="Choose an artist"></div>' +
+          '<button type="button" class="ik-artdlg__btn ik-artdlg__btn--n" aria-label="Next artist">' + ARROW_R + '</button>' +
+        '</div>' +
+        '<p class="ik-artdlg__live ik-sr" aria-live="polite"></p>' +
+      '</div>';
+    document.body.appendChild(dlg);
+    var q = function (s) { return $(s, dlg); };
+    var fig = q('.ik-artdlg__ph'), tabs = q('.ik-artdlg__tabs'), mainEl = q('.ik-artdlg__main'), tabBtns = [];
+    dlgList.forEach(function (a, i) {
+      /* portrait: the whole photo is shown (contain) over a soft, blurred copy of itself, so nothing is cropped away */
+      var bg = a.img.cloneNode(false), im = a.img.cloneNode(false);
+      [bg, im].forEach(function (x) { x.removeAttribute('loading'); x.removeAttribute('class'); x.sizes = '(max-width:700px) 92vw, 46vw'; x.draggable = false; });
+      bg.alt = ''; bg.className = 'ik-artdlg__blur'; im.alt = a.name + ' (' + a.aka + '), INKO Melbourne tattoo artist, at work';
+      var slot = mk('div', 'ik-artdlg__slot'); slot.appendChild(bg); slot.appendChild(im); fig.appendChild(slot);
+      var b = mk('button', 'ik-artdlg__tab'); b.type = 'button'; b.setAttribute('aria-label', a.name + ', AKA ' + a.aka);
+      var tim = a.img.cloneNode(false); tim.removeAttribute('class'); tim.alt = ''; tim.sizes = '120px'; tim.setAttribute('loading', 'lazy');
+      b.appendChild(tim); b.appendChild(mk('span', 'ik-artdlg__tnum', two(i))); b.appendChild(mk('span', 'ik-artdlg__tname', a.name));
+      b.addEventListener('click', function () { dShow(i); }); tabs.appendChild(b); tabBtns.push(b);
+    });
+    var dFill = function () {
+      var a = dlgList[dcur];
+      q('.ik-artdlg__num b').textContent = two(dcur); q('.ik-artdlg__num span').textContent = '/ ' + two(D - 1);
+      q('.ik-artdlg__name').textContent = a.name; q('.ik-artdlg__aka b').textContent = a.aka;
+      q('.ik-artdlg__role').textContent = a.role; q('.ik-artdlg__bio').textContent = a.bio;
+      q('.ik-artdlg__cta').setAttribute('aria-label', 'View our work (Fine-Line and Realism galleries)');
+      dlg.setAttribute('data-artist', a.key);
+      [].forEach.call(fig.children, function (s, i) { s.classList.toggle('is-on', i === dcur); });
+      tabBtns.forEach(function (b, i) { if (i === dcur) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+      q('.ik-artdlg__live').textContent = 'Artist ' + (dcur + 1) + ' of ' + D + ': ' + a.name;
+      mainEl.scrollTop = 0;
+    };
+    /* every field of the profile is written in one go (dFill), so a name is never shown with another artist's photo */
+    var dShow = function (i) {
+      var nx = ((i % D) + D) % D; if (nx === dcur) return; dcur = nx;
+      clearTimeout(dT);
+      if (rm.matches) return dFill();
+      dlg.classList.add('is-swap');
+      dT = setTimeout(function () { dFill(); dlg.classList.remove('is-swap'); }, 180);
+    };
+    var dOpen = function (opener) {
+      if (dlg.open) return;
+      dOpener = opener || document.activeElement; dScrollY = window.scrollY;
+      dFill(); document.documentElement.classList.add('ik-dlg-open');
+      dlg.showModal(); q('.ik-artdlg__x').focus({ preventScroll: true });
+    };
+    var dClose = function () { if (dlg.open) dlg.close(); };
+    dlg.addEventListener('close', function () {
+      document.documentElement.classList.remove('ik-dlg-open');
+      if (dScrollY !== null && Math.abs(window.scrollY - dScrollY) > 1) window.scrollTo(0, dScrollY);
+      if (dOpener && dOpener.focus) dOpener.focus({ preventScroll: true });
+    });
+    q('.ik-artdlg__x').addEventListener('click', dClose);
+    q('.ik-artdlg__btn--p').addEventListener('click', function () { dShow(dcur - 1); });
+    q('.ik-artdlg__btn--n').addEventListener('click', function () { dShow(dcur + 1); });
+    /* backdrop click closes (a press that starts inside the box and ends outside it does not) */
+    var downOnBackdrop = false;
+    dlg.addEventListener('pointerdown', function (e) { downOnBackdrop = e.target === dlg; });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg && downOnBackdrop) dClose(); downOnBackdrop = false; });
+    dlg.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); dShow(dcur + (e.key === 'ArrowRight' ? 1 : -1)); }
+      else if (e.key === 'Home') { e.preventDefault(); dShow(0); } else if (e.key === 'End') { e.preventDefault(); dShow(D - 1); }
+      e.stopPropagation();
+    });
+    /* swipe on the portrait */
+    var dsx = null, dsy = 0;
+    fig.addEventListener('touchstart', function (e) { if (e.touches.length === 1) { dsx = e.touches[0].clientX; dsy = e.touches[0].clientY; } }, { passive: true });
+    fig.addEventListener('touchend', function (e) {
+      var t = e.changedTouches && e.changedTouches[0]; if (dsx === null || !t) return;
+      var dx = t.clientX - dsx, dy = t.clientY - dsy; dsx = null;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) dShow(dcur + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    /* "View work" closes the dialog and goes to the Fine-Line gallery (the link is handled by the slide navigation) */
+    q('.ik-artdlg__cta').addEventListener('click', function () { dOpener = null; dScrollY = null; dClose(); });
+    /* MEET THE TEAM (any link to #ik-team) opens the dialog instead of the old team panel */
     document.addEventListener('click', function (e) {
-      var a = e.target.closest('a[href="#ik-team"]'); if (a) { e.preventDefault(); e.stopPropagation(); openTeam(); }
+      var a = e.target.closest('a[href="#ik-team"]'); if (a) { e.preventDefault(); e.stopPropagation(); dOpen(a); }
     }, true);
-    api.on('change', function () { if (team.classList.contains('is-open')) closeTeam(); });
+    api.on('change', function () { if (dlg.open) dClose(); });
   }
 
   /* ---------- pagination dots (mobile) for the reviews and promotions carousels ---------- */

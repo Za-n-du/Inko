@@ -8,7 +8,9 @@
   INKO.clamp = clamp;
   INKO.$ = function (s, c) { return (c || document).querySelector(s); };
   INKO.$$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)); };
-  INKO.locked = function () { return !!document.querySelector('.ik-team.is-open'); };
+  INKO.locked = function () { return !!document.querySelector('.ik-team.is-open, .ik-artdlg[open]'); };
+  /* inside an open dialog's own scroll area, wheel / touch scrolling is left to the browser */
+  INKO.inScroller = function (e) { return !!(e.target && e.target.closest && e.target.closest('[data-ik-scroll]')); };
   INKO.isEditor = function () {
     var b = document.body;
     return !b || b.classList.contains('elementor-editor-active') || b.classList.contains('elementor-editor-preview') || /[?&]elementor-preview=/.test(location.search);
@@ -91,6 +93,7 @@
     var lastWheel = 0, used = false, prevAbs = 0, cool = 0, lastH = 0;
     window.addEventListener('wheel', function (e) {
       if (e.ctrlKey) return;
+      if (INKO.locked() && INKO.inScroller(e)) return;
       e.preventDefault();
       if ((menu && menu.classList.contains('is-open')) || INKO.locked()) return;
       var now = performance.now();
@@ -119,7 +122,7 @@
     }, { passive: true });
     window.addEventListener('touchmove', function (e) {
       if (!ts) return;
-      if (ts.lock) { if (e.cancelable) e.preventDefault(); return; }
+      if (ts.lock) { if (e.cancelable && !INKO.inScroller(e)) e.preventDefault(); return; }
       var t = e.touches[0], dx = t.clientX - ts.x, dy = ts.y - t.clientY;
       if (!ts.mode && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) ts.mode = Math.abs(dy) >= Math.abs(dx) ? 'v' : 'h';
       if (ts.mode === 'v') {
