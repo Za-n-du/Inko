@@ -122,11 +122,14 @@ figure, blockquote { margin: 0; }
 	text-wrap: balance;
 }
 
+/* Section titles: ~28% below the original scale so only the Homepage Hero dominates.
+   Scale (desktop max): hero 5.6rem › contact 6rem (wordmark echo) › slide 02 3.9rem › display 3.25rem › md 2.6rem. */
 .display {
-	font-size: clamp(2.4rem, 4.5vw, 4.5rem);
-	line-height: 1.04;
+	font-size: clamp(1.85rem, 3.2vw, 3.25rem);
+	line-height: 1.1;
+	letter-spacing: -.008em;
 }
-.display--md { font-size: clamp(2rem, 3.5vw, 3.5rem); line-height: 1.08; }
+.display--md { font-size: clamp(1.65rem, 2.6vw, 2.6rem); line-height: 1.14; }
 
 .accent {
 	font-style: italic;
@@ -545,7 +548,8 @@ html.menu-open, body.menu-open { overflow: hidden; }
 
 /* Leave room for the fixed slide rail on large screens. */
 @media (min-width: 1024px) {
-	.slide__inner { padding-right: calc(var(--gutter) + 56px); }
+	.slide__inner,
+	.inko-home .site-footer { padding-right: calc(var(--gutter) + 56px); }
 }
 
 /* JS on: sticky stacking. Each slide pins (at its bottom edge if taller than
@@ -599,56 +603,65 @@ html.menu-open, body.menu-open { overflow: hidden; }
 }
 .ghost-num { right: calc(var(--gutter) - .04em); bottom: -.08em; font-size: clamp(14rem, 34vw, 34rem); }
 
-/* Slide rail (fixed section index) */
+/* Slide rail — glass section index (numbers only; names are screen-reader text + title tooltip) */
 .slide-rail {
 	position: fixed;
-	right: clamp(10px, 1.6vw, 28px);
+	right: clamp(12px, 1.4vw, 24px);
 	top: 50%;
 	z-index: 80;
+	padding: 8px 5px;
+	border: 1px solid rgba(255, 255, 255, .12);
+	border-radius: 18px;
+	background: rgba(255, 255, 255, .04);
+	-webkit-backdrop-filter: blur(14px) saturate(1.15);
+	backdrop-filter: blur(14px) saturate(1.15);
+	box-shadow: 0 10px 30px -18px rgba(0, 0, 0, .6);
 	transform: translateY(-50%);
+	transition: opacity .4s var(--ease), visibility 0s linear 0s, background .4s, border-color .4s;
 }
 .slide-rail ol { display: grid; gap: 2px; list-style: none; margin: 0; padding: 0; }
 .slide-rail a {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	gap: 10px;
-	min-height: 26px;
-	padding: 0 4px;
-	font-size: .66rem;
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 34px;
+	height: 26px;
+	border-radius: 10px;
+	font-size: .6rem;
 	font-weight: 700;
-	letter-spacing: .14em;
-	color: rgba(244, 241, 236, .38);
-	transition: color .3s;
+	letter-spacing: .08em;
+	font-variant-numeric: tabular-nums;
+	color: rgba(255, 255, 255, .65);
+	transition: color .3s, background .3s var(--ease);
 }
-.slide-rail__num { display: inline-flex; align-items: center; gap: 8px; }
-.slide-rail__num::before {
+.slide-rail a::before {
 	content: "";
-	width: 10px; height: 1px;
-	background: currentColor;
-	transition: width .4s var(--ease), background .3s;
+	position: absolute;
+	left: 3px;
+	top: 50%;
+	width: 2px;
+	height: 0;
+	border-radius: 2px;
+	background: var(--orange);
+	transform: translateY(-50%);
+	transition: height .35s var(--ease);
 }
-.slide-rail__label {
-	opacity: 0;
-	transform: translateX(6px);
-	text-transform: uppercase;
-	white-space: nowrap;
-	transition: opacity .3s, transform .3s var(--ease);
-	order: -1;
-}
-.slide-rail a:hover, .slide-rail a.is-active { color: var(--white); }
-.slide-rail a.is-active .slide-rail__num { color: var(--orange); }
-.slide-rail a.is-active .slide-rail__num::before { width: 26px; background: var(--orange); }
-.slide-rail a:hover .slide-rail__label,
-.slide-rail a:focus-visible .slide-rail__label { opacity: 1; transform: none; }
-.slide-rail a:hover, .slide-rail a:focus-visible { background: rgba(11, 11, 12, .85); }
-.slide-rail.on-light a:hover, .slide-rail.on-light a:focus-visible { background: rgba(236, 231, 223, .9); }
-.slide-rail.on-light a { color: rgba(11, 11, 12, .4); }
-.slide-rail { transition: opacity .4s var(--ease), visibility 0s linear 0s; }
+.slide-rail a:hover, .slide-rail a:focus-visible { color: #fff; background: rgba(255, 255, 255, .08); }
+.slide-rail a.is-active { color: var(--orange); background: rgba(255, 90, 24, .1); }
+.slide-rail a.is-active::before { height: 12px; }
+.slide-rail a:focus-visible { outline-offset: 1px; }
 .slide-rail.is-hidden { opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility 0s linear .4s; }
-.slide-rail.on-light a:hover, .slide-rail.on-light a.is-active { color: var(--black); }
-.slide-rail.on-light a.is-active .slide-rail__num { color: var(--black); }
-.slide-rail.on-light a.is-active .slide-rail__num::before { background: var(--black); }
+
+/* Over the orange Pay Later slide: dark glass text so it stays legible. */
+.slide-rail.on-light { background: rgba(5, 5, 5, .06); border-color: rgba(5, 5, 5, .16); }
+.slide-rail.on-light a { color: rgba(5, 5, 5, .62); }
+.slide-rail.on-light a:hover, .slide-rail.on-light a:focus-visible { color: #050505; background: rgba(5, 5, 5, .08); }
+.slide-rail.on-light a.is-active { color: #050505; background: rgba(5, 5, 5, .1); }
+.slide-rail.on-light a.is-active::before { background: #050505; }
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+	.slide-rail { background: rgba(17, 17, 17, .82); }
+}
 
 /* 7. Motion system --------------------------------------------------------- */
 /* Hero entrance */
@@ -912,7 +925,7 @@ html.menu-open, body.menu-open { overflow: hidden; }
 .about__copy .eyebrow { margin-bottom: clamp(22px, 3.4vh, 36px); }
 .about__title {
 	margin: 0 0 clamp(26px, 4vh, 40px);
-	font-size: clamp(2.8rem, 5.1vw, 5.3rem);
+	font-size: clamp(2.3rem, 3.8vw, 3.9rem);
 	line-height: 1.02;
 	letter-spacing: -.018em;
 	color: var(--white);
@@ -972,7 +985,9 @@ html.menu-open, body.menu-open { overflow: hidden; }
 .style-tile a:hover .style-tile__label .icon { transform: translate(3px, -3px); color: var(--orange); }
 
 /* Shared slide header */
-.slide-head { margin-bottom: clamp(26px, 4vh, 48px); }
+.slide-head { margin-bottom: clamp(24px, 3.6vh, 40px); }
+/* Title → description rhythm */
+.display + .lede, .display + p { margin-top: 0; }
 .slide-head--split { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
 
 /* 03 Promotions */
@@ -1146,7 +1161,7 @@ html.menu-open, body.menu-open { overflow: hidden; }
 }
 .studio__pin { display: inline-block; vertical-align: -.05em; margin-right: .2em; color: var(--orange); }
 .studio__pin .icon { width: .72em; height: .72em; display: inline-block; }
-.studio__copy .display { margin-bottom: clamp(20px, 3vh, 32px); }
+.studio__copy .display { margin-bottom: clamp(16px, 2.4vh, 24px); }
 .studio__address {
 	display: flex;
 	align-items: center;
@@ -1254,7 +1269,7 @@ html.menu-open, body.menu-open { overflow: hidden; }
 .quote__bg-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.4); }
 .quote__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--black), rgba(11, 11, 12, .2) 50%, var(--black)); }
 .quote__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 96px); align-items: center; }
-.quote__copy .display { margin-bottom: 24px; }
+.quote__copy .display { margin-bottom: clamp(16px, 2.4vh, 24px); }
 .quote__contact { margin-top: clamp(24px, 4vh, 40px); display: grid; gap: 6px; }
 .quote__contact-label { margin: 0 0 6px; font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
 .contact-line { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-size: 1.05rem; font-weight: 600; transition: color .3s; width: fit-content; }
@@ -1354,7 +1369,7 @@ html.menu-open, body.menu-open { overflow: hidden; }
 .contact__title {
 	margin-bottom: clamp(16px, 2.6vh, 26px);
 	font-weight: 700;
-	font-size: clamp(3rem, 8.2vw, 8.4rem);
+	font-size: clamp(2.4rem, 5.9vw, 6rem);
 	line-height: 1.02;
 	text-transform: uppercase;
 	letter-spacing: 0;
@@ -1381,7 +1396,7 @@ html.menu-open, body.menu-open { overflow: hidden; }
 }
 .site-footer__brand img { width: 128px; height: auto; }
 .site-footer__intro { margin: 18px 0 0; max-width: 34ch; color: var(--muted); font-size: .9rem; line-height: 1.7; }
-.site-footer__cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.site-footer__cols { display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; gap: 28px 40px; }
 .site-footer__label { margin-bottom: 14px; font-family: var(--f-text); font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--orange); }
 .site-footer__col p { margin: 0; color: var(--muted); line-height: 1.7; font-size: .93rem; }
 .site-footer__list { display: grid; gap: 2px; font-size: .93rem; color: var(--muted); }
@@ -1474,7 +1489,7 @@ html.menu-open, body.menu-open { overflow: hidden; }
 	.slide-rail { display: none; }
 
 	.about__grid { grid-template-columns: 1fr; align-items: start; gap: 44px; }
-	.about__title { font-size: clamp(2.7rem, 7.4vw, 4.2rem); }
+	.about__title { font-size: clamp(2.2rem, 5.4vw, 3.1rem); }
 	.style-tiles { max-width: 700px; }
 
 	.artists { grid-template-columns: 1fr; }
@@ -1510,10 +1525,10 @@ html.menu-open, body.menu-open { overflow: hidden; }
 
 	.slide__inner { padding-top: calc(var(--header-h) + 28px); padding-bottom: 56px; }
 	.ghost-num { font-size: 13rem; right: -.06em; }
-	.display { font-size: clamp(2.1rem, 9.6vw, 2.9rem); }
-	.display--md { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+	.display { font-size: clamp(1.7rem, 7.4vw, 2.15rem); }
+	.display--md { font-size: clamp(1.5rem, 6.4vw, 1.85rem); }
 
-	.about__title { font-size: clamp(2.35rem, 11.4vw, 3.1rem); }
+	.about__title { font-size: clamp(1.85rem, 8.6vw, 2.35rem); }
 	.about__intro { font-size: 1rem; }
 	.style-tiles { gap: 12px; }
 	.style-tile__label { gap: 8px; padding: 14px 0 12px; }
@@ -1553,7 +1568,7 @@ html.menu-open, body.menu-open { overflow: hidden; }
 
 	.pay-logos { gap: 8px; }
 
-	.contact__title { font-size: clamp(2.5rem, 12.6vw, 4.4rem); }
+	.contact__title { font-size: clamp(1.9rem, 9.6vw, 3.2rem); }
 	.contact__actions .btn { flex: 1 1 100%; }
 
 	.site-footer__cols { grid-template-columns: 1fr 1fr; }
@@ -1572,6 +1587,31 @@ html.menu-open, body.menu-open { overflow: hidden; }
 }
 
 /* 12b. Artist profiles + portfolio galleries (v2.2) ------------------------- */
+/* Artist cards: portrait photo on top (full card width), profile beneath.
+   Desktop 4 columns (4:5) · laptop/tablet 2 columns (1:1) · mobile 1 column (5:4, approved). */
+.artists { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 1.6vw, 24px); }
+.artist__card { grid-template-columns: 1fr; grid-template-rows: auto 1fr; min-height: 0; }
+.artist__media { aspect-ratio: 4 / 5; }
+.artist__img { object-position: var(--pos, 50% 30%); filter: grayscale(.3) contrast(1.04); }
+.artist__body { padding: clamp(20px, 1.7vw, 28px); }
+.artist__index { margin-bottom: 10px; }
+.artist__name { font-size: clamp(1.6rem, 1.9vw, 2.05rem); }
+.artist__role { margin: 12px 0 14px; padding-bottom: 14px; }
+.artist__actions { flex-direction: column; align-items: stretch; gap: 10px; }
+.artist__link { align-self: flex-start; }
+.artist__book { width: 100%; }
+a[href^="tel:"] { white-space: nowrap; }
+@media (max-width: 1279px) {
+	.artists { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+	.site-footer__top { grid-template-columns: 1fr; }
+	.artist__media { aspect-ratio: 1 / 1; }
+}
+@media (max-width: 767px) {
+	.artists { grid-template-columns: 1fr; gap: 20px; }
+	.artist__media { aspect-ratio: 5 / 4; }
+	.artist__body { padding: 20px 18px 22px; }
+}
+
 .artist__facts { margin: 0 0 16px; }
 .artist__fact { display: flex; flex-direction: column; gap: 8px; margin: 0 0 12px; }
 .artist__fact dt { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }

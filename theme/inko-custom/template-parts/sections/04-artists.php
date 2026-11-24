@@ -32,11 +32,11 @@ $inko_tt = inko_split_last( $inko_a['title'] );
 				?>
 				<li class="artist" data-reveal style="--d:<?php echo esc_attr( ( $inko_k % 2 ) * 0.12 ); ?>s">
 					<article class="artist__card" id="artist-<?php echo esc_attr( $inko_slug ); ?>" aria-labelledby="artist-<?php echo esc_attr( $inko_slug ); ?>-name">
-						<figure class="artist__media">
+						<figure class="artist__media"<?php echo ! empty( $inko_artist['pos'] ) ? ' style="--pos:' . esc_attr( $inko_artist['pos'] ) . '"' : ''; ?>>
 							<?php
 							/* translators: 1: artist name, 2: alias */
 							$inko_alt = sprintf( __( '%1$s AKA %2$s, INKO Melbourne artist', 'inko-custom' ), $inko_artist['name'], $inko_artist['aka'] );
-							echo inko_img( $inko_artist['img'], $inko_alt, '(min-width: 1024px) 18vw, (min-width: 560px) 34vw, 92vw', array( 'class' => 'artist__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput
+							echo inko_img( $inko_artist['img'], $inko_alt, '(min-width: 1280px) 23vw, (min-width: 768px) 46vw, 92vw', array( 'class' => 'artist__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput
 							?>
 						</figure>
 

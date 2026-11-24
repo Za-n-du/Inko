@@ -102,6 +102,7 @@ function inko_content( $key = null ) {
 				'items' => array(
 					array(
 						'img'         => 'artist-swan',
+						'pos'         => '35% 30%', // Photo focal point (keeps the face in frame).
 						'name'        => 'Swan',
 						'aka'         => 'BunnyGirlInk',
 						// Client: unnecessary dashes removed from captions (original: "Fine-Line Artist – Floral & Realism").
@@ -114,6 +115,7 @@ function inko_content( $key = null ) {
 					),
 					array(
 						'img'         => 'artist-elmundo',
+						'pos'         => '45% 35%', // Photo focal point (keeps the face in frame).
 						'name'        => 'Elmundo',
 						'aka'         => 'ELM J',
 						'role'        => 'Realism Artist',
@@ -125,6 +127,7 @@ function inko_content( $key = null ) {
 					),
 					array(
 						'img'         => 'artist-yinkspire',
+						'pos'         => '35% 30%', // Photo focal point (keeps the face in frame).
 						'name'        => 'Yinkspire',
 						'aka'         => 'Yosufi',
 						'role'        => 'Realism Artist',
@@ -136,6 +139,7 @@ function inko_content( $key = null ) {
 					),
 					array(
 						'img'         => 'artist-don',
+						'pos'         => '50% 18%', // Photo focal point (keeps the face in frame).
 						'name'        => 'Don',
 						'aka'         => 'OIDONNY',
 						'role'        => 'Founder, INKO', // Original: "Founder - INKO".

@@ -44,9 +44,9 @@ $inko_total  = count( $inko_slides );
 			++$inko_n;
 			?>
 			<li>
-				<a href="#<?php echo esc_attr( $inko_id ); ?>" data-rail="<?php echo esc_attr( $inko_id ); ?>">
-					<span class="slide-rail__num"><?php echo esc_html( sprintf( '%02d', $inko_n ) ); ?></span>
-					<span class="slide-rail__label"><?php echo esc_html( $inko_slide[1] ); ?></span>
+				<a href="#<?php echo esc_attr( $inko_id ); ?>" data-rail="<?php echo esc_attr( $inko_id ); ?>" title="<?php echo esc_attr( $inko_slide[1] ); ?>">
+					<span class="slide-rail__num" aria-hidden="true"><?php echo esc_html( sprintf( '%02d', $inko_n ) ); ?></span>
+					<span class="screen-reader-text"><?php echo esc_html( sprintf( /* translators: 1: section number, 2: section name */ __( 'Section %1$d: %2$s', 'inko-custom' ), $inko_n, $inko_slide[1] ) ); ?></span>
 				</a>
 			</li>
 		<?php endforeach; ?>
