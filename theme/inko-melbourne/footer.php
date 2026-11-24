@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer. On slide pages the footer is slide 12 (editable in Elementor), so nothing is printed twice.
+ * Footer. The editorial homepage supplies its own footer; ordinary pages use the compact theme footer.
  *
  * @package inko-melbourne
  */
@@ -8,7 +8,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-if ( ! inko_is_stack_page() ) {
+if ( ! inko_is_stack_page() && ! inko_is_editorial_home() ) {
 	get_template_part( 'template-parts/footer/simple-footer' );
 }
 wp_footer();

@@ -17,16 +17,39 @@
 .s-hero__img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 /* hero background photo (full slide, image widget with .ik-slide__bg): subject on the right, dark space left for the text.
    The overlay only deepens the left (behind BALI PRICES) and the bottom edge (slide counter); the red hands stay untouched. */
-.s-hero__bg img{object-position:50% 50%}
+.s-hero__bg img{object-fit:cover;object-position:50% 50%}
 .s-hero__bg::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(9,11,15,.55) 0,rgba(9,11,15,.25) 30%,rgba(9,11,15,0) 50%),linear-gradient(0deg,rgba(9,11,15,.45) 0,rgba(9,11,15,0) 14%)}
 .s-hero .ik-ring{right:13vw;top:30vh;width:min(23vw,340px);aspect-ratio:1;transform:rotate(18deg);z-index:3;opacity:.92}
-.s-hero__txt{position:relative;z-index:5;height:100%;justify-content:center;max-width:min(54vw,760px);padding-left:clamp(0px,5.4vw,90px)}
-.ik-scope .s-hero__title .elementor-heading-title{font:900 clamp(88px,11.4vw,188px)/.92 var(--f-disp);letter-spacing:-.02em;color:var(--white);display:flex;flex-direction:column}
+.ik-scope.s-hero .ik-slide__inner{padding-left:clamp(70px,10.5vw,168px)!important;padding-right:clamp(70px,8vw,128px)!important}
+.s-hero__txt{position:relative;z-index:5;height:100%;justify-content:center;max-width:min(42vw,580px);padding-left:0}
+.ik-scope .s-hero__title .elementor-heading-title{position:relative;font:900 clamp(42px,3.2vw,52px)/1 var(--f-disp);letter-spacing:-.025em;color:var(--white);display:flex;flex-direction:row;align-items:baseline;gap:.18em;white-space:nowrap}
 .s-hero__title .elementor-heading-title>span{display:block}
-.s-hero__title .ik-or{font-size:.93em;margin-top:.02em}
-.ik-scope .elementor-widget.s-hero__p{margin:clamp(20px,3.6vh,40px) 0 clamp(26px,4.6vh,48px);max-width:30ch}
-.s-hero__p p{font-size:clamp(15px,1.25vw,19px);font-weight:500;line-height:1.7;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,241,236,.88)}
+.s-hero__title .ik-or{font-size:1em;margin-top:0}
+.ik-scope .s-hero__title .elementor-heading-title::after{content:"";position:absolute;left:0;bottom:-.36em;width:clamp(54px,5.4vw,86px);height:3px;background:var(--orange)}
+.s-hero__lab p{font-size:clamp(11px,1vw,16px);font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:rgba(244,241,236,.88);margin-bottom:clamp(8px,1.6vh,18px)}
+.ik-scope .elementor-widget.s-hero__p{margin:clamp(30px,3.8vh,38px) 0 clamp(22px,3.4vh,34px)}
+.elementor.elementor .e-con>.elementor-widget.s-hero__p{max-width:270px}
+.s-hero__p p{font-size:clamp(15px,1.12vw,18px);font-weight:500;line-height:1.55;letter-spacing:0;text-transform:none;color:rgba(244,241,236,.9)}
 .s-hero__txt .ik-btn{align-self:flex-start}
+/* Shared chrome follows the approved Slide 01 composition while leaving other slides unchanged. */
+body.ik-stack:not([data-ik-slide]) .ik-rail,body[data-ik-slide="home"] .ik-rail{left:clamp(22px,4vw,64px);right:auto}
+body.ik-stack:not([data-ik-slide]) .ik-cue,body[data-ik-slide="home"] .ik-cue{left:50%;right:auto;transform:translateX(-50%)}
+@media (max-width:1180px){
+  .ik-scope.s-hero .ik-slide__inner{padding-left:clamp(42px,8vw,88px)!important;padding-right:clamp(30px,6vw,72px)!important}
+  .s-hero__txt{max-width:min(60vw,580px)}
+  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(38px,4.4vw,52px)}
+  .ik-scope .elementor-widget.s-hero__p{margin:30px 0 22px}
+}
+@media (max-width:767px){
+  .ik-scope.s-hero .ik-slide__inner{padding:86px 22px 0 58px!important}
+  .s-hero__txt{height:auto;align-self:stretch;justify-content:flex-start;max-width:none;padding:0}
+  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(30px,8vw,38px);gap:.13em}
+  .ik-scope .elementor-widget.s-hero__p{margin:26px 0 16px}
+  .elementor.elementor .e-con>.elementor-widget.s-hero__p{max-width:190px}
+  .s-hero__p p{font-size:13px;line-height:1.45}
+  body.ik-stack:not([data-ik-slide]) .ik-rail,body[data-ik-slide="home"] .ik-rail{left:18px;top:50%;right:auto}
+  body.ik-stack:not([data-ik-slide]) .ik-cue,body[data-ik-slide="home"] .ik-cue{left:50%;right:auto;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%)}
+}
 .s-intro .ik-slide__inner{align-items:center;justify-content:center;gap:clamp(22px,4.4vh,46px);--gap:clamp(22px,4.4vh,46px)}
 .ik-scope .s-intro__bgl,.ik-scope .s-intro__bgr{position:absolute;top:0;bottom:0;width:50%}
 .s-intro__bgl{left:0;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent);mask-image:linear-gradient(90deg,#000 55%,transparent)}

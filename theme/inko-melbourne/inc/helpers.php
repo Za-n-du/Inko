@@ -35,13 +35,38 @@ function inko_is_stack_page() {
 	}
 	if ( ! isset( $cache[ $id ] ) ) {
 		$tpl  = get_page_template_slug( $id );
+		if ( 'template-inko-home.php' === $tpl ) {
+			$cache[ $id ] = false;
+			return false;
+		}
 		$data = get_post_meta( $id, '_elementor_data', true );
 		if ( is_array( $data ) ) {
 			$data = wp_json_encode( $data );
 		}
-		$cache[ $id ] = ( 'template-inko-home.php' === $tpl ) || ( is_string( $data ) && false !== strpos( $data, 'ik-slide' ) );
+		$cache[ $id ] = is_string( $data ) && false !== strpos( $data, 'ik-slide' );
 	}
 	return $cache[ $id ];
+}
+
+/**
+ * Whether the page is using the vertically scrolling editorial homepage.
+ *
+ * @return bool
+ */
+function inko_is_editorial_home() {
+	if ( is_admin() || ! is_singular() ) {
+		return false;
+	}
+	$id = (int) get_queried_object_id();
+	if ( ! $id ) {
+		return false;
+	}
+	$tpl  = get_page_template_slug( $id );
+	$data = get_post_meta( $id, '_elementor_data', true );
+	if ( is_array( $data ) ) {
+		$data = wp_json_encode( $data );
+	}
+	return 'template-inko-home.php' === $tpl || ( is_string( $data ) && false !== strpos( $data, 'inko-home' ) );
 }
 
 /**
@@ -89,15 +114,11 @@ function inko_socials() {
 	$defaults = array(
 		'facebook'  => 'https://www.facebook.com/inkomelbourne/',
 		'instagram' => 'https://www.instagram.com/inko_melbourne/',
-		'tiktok'    => 'https://www.tiktok.com/@inko.melbourne?_r=1&_t=ZS-9AgJRaJcvlk',
-		'youtube'   => 'https://youtube.com/@inko-b5s?si=r4qYbwGlXBcjs4s2',
 		'threads'   => 'https://www.threads.com/@inko_melbourne',
 	);
 	$labels = array(
 		'facebook'  => 'Facebook',
 		'instagram' => 'Instagram',
-		'tiktok'    => 'TikTok',
-		'youtube'   => 'YouTube',
 		'threads'   => 'Threads',
 	);
 	$out = array();
@@ -121,7 +142,7 @@ function inko_default_nav() {
 	return array(
 		array( 'Home', '#home' ),
 		array( 'Artists', '#artists' ),
-		array( 'Our Work', '#fine-line' ),
+		array( 'Our Work', '#work' ),
 		array( 'Studio', '#location' ),
 		array( 'Contact', '#quote' ),
 	);
@@ -135,6 +156,9 @@ function inko_default_nav() {
  */
 function inko_nav_items() {
 	$items     = array();
+	if ( inko_is_editorial_home() ) {
+		return inko_default_nav();
+	}
 	$locations = get_nav_menu_locations();
 	if ( ! empty( $locations['primary'] ) ) {
 		$menu = wp_get_nav_menu_items( $locations['primary'] );
@@ -150,7 +174,7 @@ function inko_nav_items() {
 	if ( ! $items ) {
 		$items = inko_default_nav();
 	}
-	$stack = inko_is_stack_page();
+	$stack = inko_is_stack_page() || inko_is_editorial_home();
 	foreach ( $items as $k => $item ) {
 		if ( 0 === strpos( $item[1], '#' ) && ! $stack ) {
 			$items[ $k ][1] = home_url( '/' ) . $item[1];

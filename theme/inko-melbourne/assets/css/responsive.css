@@ -13,12 +13,6 @@
   .ik-scope.s-rev .ik-car__it{min-height:0}
 }
 @media (orientation:portrait) and (min-width:700px){
-  .s-hero__img{width:100%;height:62%;top:auto;bottom:0;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 40%);mask-image:linear-gradient(180deg,transparent 0,#000 40%);-webkit-mask-composite:source-over;mask-composite:add}
-  .s-hero__img img{object-position:50% 25%}
-  .s-hero .ik-ring{right:12vw;top:auto;bottom:16vh;width:32vw}
-  .s-hero__txt{justify-content:flex-start;padding-top:12vh;max-width:none}
-  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(120px,24vw,260px)}
-  .s-hero__ghost{display:none}
   .s-quote__img{width:100%;height:55%;top:auto;bottom:0;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 45%);mask-image:linear-gradient(180deg,transparent 0,#000 45%)}
   .s-quote .ik-ring{right:10vw;top:auto;bottom:20vh;width:40vw}
   .s-quote__txt{justify-content:flex-start;padding-top:14vh;max-width:70%}
@@ -31,7 +25,6 @@
   .ik-scope .s-rev__h .elementor-heading-title{font-size:clamp(40px,5vw,56px)}
   .s-rev__q p{font-size:clamp(17px,1.9vw,20px)}
   .ik-scope .s-rev__name .elementor-heading-title{font-size:15px}
-  .ik-scope .s-hero__p p{font-size:clamp(16px,2vw,20px)}
   .s-quote__p p{font-size:clamp(18px,2.1vw,22px)}
   .ik-scope .s-intro__h .elementor-heading-title{font-size:clamp(26px,3.4vw,36px)}
   .ik-scope .ik-card__t .elementor-heading-title{font-size:clamp(28px,3.6vw,42px)}
@@ -44,14 +37,6 @@
 @media (max-width:700px){
   :root{--hdr:68px;--padx:22px}
   .ik-frame::after{inset:10px;border-radius:20px}
-  .s-hero__img{width:100%;height:58%;top:auto;bottom:0;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 38%);mask-image:linear-gradient(180deg,transparent 0,#000 38%);-webkit-mask-composite:source-over;mask-composite:add}
-  .s-hero__img img{object-position:50% 20%}
-  .s-hero .ik-ring{right:-8vw;top:auto;bottom:24vh;width:46vw;border-width:9px}
-  .s-hero__ghost{display:none}
-  .s-hero__txt{justify-content:flex-start;padding:16vh 0 0;max-width:none}
-  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(84px,27vw,132px)}
-  .s-hero__p p{font-size:13px}
-  .ik-scope .elementor-widget.s-hero__p{margin:16px 0 22px}
   .s-intro .ik-slide__inner{justify-content:flex-start;gap:22px}
   .ik-scope .s-intro__h .elementor-heading-title{font-size:20px}
   .ik-scope .s-intro__cards{grid-template-columns:1fr;gap:14px}
@@ -107,7 +92,6 @@
   .s-foot .ik-slide__inner{background-position:left bottom 12svh}
 }
 @media (max-height:640px) and (min-width:700px){
-  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(70px,11vw,150px)}
   .ik-scope .s-intro__cards{width:min(100%,820px)}
 }
 @media (prefers-reduced-motion:reduce){
@@ -116,9 +100,6 @@
 /* ---- short desktop windows / laptops / embedded previews: keep every slide inside the viewport ---- */
 @media (min-width:1025px) and (max-height:720px){
   .ik-scope .ik-slide__inner{--padding-top:92px!important;--padding-bottom:62px!important}
-  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(64px,15vh,120px)}
-  .ik-scope .elementor-widget.s-hero__p{margin:14px 0 18px}
-  .s-hero__p p{font-size:13px}
   .ik-scope .s-gal__t .elementor-heading-title{font-size:clamp(46px,10vh,84px)}
   .ik-scope .s-loc__h .elementor-heading-title{font-size:clamp(46px,11vh,86px)}
   .s-loc__p p{font-size:12px;line-height:1.5}
@@ -146,31 +127,17 @@
 .ik-dots{display:none;justify-content:center;gap:10px;position:absolute;left:0;right:0;top:100%;margin-top:14px}
 .ik-dots i{width:9px;height:9px;border-radius:50%;background:var(--ash-2);transition:background .3s}
 .ik-dots i.is-on{background:var(--orange)}
-.s-hero__lab p{font-size:clamp(11px,1vw,16px);font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:rgba(244,241,236,.88);margin-bottom:clamp(8px,1.6vh,18px)}
 .s-rev__sub p{font-size:clamp(11px,1vw,16px);font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,241,236,.7);text-align:center;margin-top:10px}
 .s-rev .ik-car__it{box-shadow:0 0 0 1px rgba(255,90,24,.22),0 0 22px rgba(255,90,24,.2),inset 0 0 26px rgba(255,90,24,.07)}
 .s-pay .ik-pay{flex-wrap:nowrap}
 .ik-scope .s-foot__logo img{filter:drop-shadow(0 0 16px rgba(255,90,24,.4))}
-.s-hero__img{opacity:1}
 .s-quote__img{opacity:1}
 .ik-scope .s-loc__map{position:absolute;z-index:0;right:6%;top:7%;width:34%;height:40%;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 260'%3E%3Cdefs%3E%3CradialGradient id='g'%3E%3Cstop offset='0' stop-color='%23ff5a18' stop-opacity='.38'/%3E%3Cstop offset='1' stop-color='%23ff5a18' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg stroke='%23f4f1ec' stroke-opacity='.11' stroke-width='2' fill='none'%3E%3Cpath d='M-20 60 L420 20M-20 120 L420 85M-20 190 L420 150M-20 250 L420 215'/%3E%3Cpath d='M40 -10 L90 270M130 -10 L190 270M225 -10 L290 270M320 -10 L390 270'/%3E%3C/g%3E%3Ccircle cx='258' cy='108' r='78' fill='url(%23g)'/%3E%3Cpath fill='%23ff5a18' d='M258 62a27 27 0 0 0-27 27c0 20 27 53 27 53s27-33 27-53a27 27 0 0 0-27-27zm0 37a10 10 0 1 1 0-20 10 10 0 0 1 0 20z'/%3E%3Ccircle cx='118' cy='60' r='3' fill='%23ff5a18'/%3E%3C/svg%3E") center/contain no-repeat}
 .ik-scope .s-loc__map::before{content:"Camberwell Station";position:absolute;left:18%;top:15%;font:500 clamp(9px,.75vw,12px) var(--f-body);color:rgba(244,241,236,.8)}
 .ik-scope .s-loc__map::after{content:"Cookson St";position:absolute;left:46%;bottom:6%;transform:rotate(18deg);font:500 clamp(9px,.75vw,12px) var(--f-body);color:rgba(244,241,236,.8)}
-.ik-scope .elementor-widget.s-hero__ghost,.s-hero__ghost{display:none}
 
 /* ================= tablet + mobile (<=1180px) ================= */
 @media (max-width:1180px){
-  /* hero */
-  .s-hero__lab p{font-size:12px;letter-spacing:.36em}
-  .s-hero__img{width:100%;height:76%;top:auto;bottom:0;right:0;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 30%);mask-image:linear-gradient(180deg,transparent 0,#000 30%);-webkit-mask-composite:source-over;mask-composite:add}
-  .s-hero__img img{object-position:50% 100%}
-  .ik-scope .s-hero__bg{top:auto;bottom:0;height:76%;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 24%);mask-image:linear-gradient(180deg,transparent 0,#000 24%)}
-  .s-hero__bg img{object-position:88% 50%}
-  .s-hero__bg::after{background:linear-gradient(0deg,rgba(9,11,15,.45) 0,rgba(9,11,15,0) 14%)}
-  .s-hero__txt{justify-content:flex-start;padding:max(10vh,40px) 0 0;max-width:none}
-  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(92px,17vw,150px)}
-  .ik-scope .elementor-widget.s-hero__p{margin:14px 0 22px;max-width:15em}
-  .s-hero__p p{font-size:clamp(15px,2.3vw,21px);text-transform:none;letter-spacing:.01em;line-height:1.5;font-weight:500;color:rgba(244,241,236,.92)}
   /* intro: cards stack vertically */
   .s-intro .ik-slide__inner{justify-content:flex-start;gap:18px}
   .s-intro__bg img{object-position:93% 50%}
@@ -237,9 +204,7 @@
   /* reviews: glow cards, 2-up */
   .s-rev__sub p{font-size:12px;letter-spacing:.2em}
 }
-/* ================= tablet portrait: the Slide 01 photo starts under BALI PRICES (its red hands never sit behind the orange title) ================= */
 @media (min-width:701px) and (max-width:1180px) and (orientation:portrait){
-  .ik-scope .s-hero__bg{height:50%}
 }
 /* ================= tablet portrait: gallery = pages of two stacked cards ================= */
 @media (min-width:701px) and (max-width:1180px){
@@ -277,16 +242,6 @@
   /* Elementor's default kit colour/font (loaded after the theme) must not reach INKO headings */
   .ik-scope .s-promo__t .elementor-heading-title{color:var(--white)}
   .ik-scope .ik-acard__n .elementor-heading-title{font:900 20px/1.1 var(--f-disp);color:var(--white)}
-  /* hero: machine photo on top, text block bottom (reference) */
-  .s-hero__img{width:100%;height:54%;top:calc(var(--hdr) + 2px);bottom:auto;left:5%;right:auto;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 62%,transparent 100%)}
-  .s-hero__img img{object-position:50% 40%}
-  .ik-scope .s-hero__bg{top:calc(var(--hdr) + 2px);bottom:auto;height:54%;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,#000 70%,transparent 100%)}
-  .s-hero__bg img{object-position:88% 50%}
-  .s-hero__txt{justify-content:flex-end;padding:0 0 4px}
-  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(62px,19vw,92px)}
-  .s-hero__lab p{font-size:10.5px;letter-spacing:.32em}
-  .s-hero__p p{font-size:14px}
-  .ik-scope .elementor-widget.s-hero__p{margin:10px 0 16px}
   /* specialities: two cards share the height that is left under the intro text */
   .ik-scope .s-intro__cards{gap:12px}
   .ik-scope .ik-card{height:clamp(112px,calc((100svh - 340px) / 2),250px)}
@@ -360,10 +315,6 @@
 }
 /* short phones (e.g. 320x568, 375x667): tighten vertical rhythm so every slide still fits without overlaps */
 @media (max-width:700px) and (max-height:700px){
-  .ik-scope .s-hero__bg{height:42%}
-  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(54px,17vw,80px)}
-  .ik-scope .elementor-widget.s-hero__p{margin:8px 0 12px}
-  .s-hero__p p{font-size:13px}
   .ik-scope .s-intro__h .elementor-heading-title{font-size:17px}
   .ik-scope .s-art__h .elementor-heading-title{font-size:clamp(34px,11vw,52px)}
   .s-art__p p{font-size:12px}
@@ -410,7 +361,6 @@
 @media (min-width:1181px){
   /* text widths: Elementor's ".elementor.elementor .e-con>.elementor-widget{max-width:100%}" (0,4,0) overrode the
      theme's paragraph widths, so the reference line lengths are restored with selectors that out-rank it */
-  .ik-scope.ik-slide .elementor-widget.s-hero__p{max-width:30ch}
   .ik-scope.ik-slide .elementor-widget.s-art__p{max-width:26em}
   .ik-scope.ik-slide .elementor-widget.s-loc__p{max-width:34em}
   .ik-scope.ik-slide .elementor-widget.s-quote__p{max-width:28em}
@@ -431,7 +381,7 @@
   .ik-scope .ik-marq__grp{padding-right:0}
   .ik-marq__grp>.elementor-widget:last-child::after{display:none}
   .ik-scope .ik-marq__grp .elementor-heading-title{font-size:clamp(46px,4.4vw,92px)}
-  /* 08: solid stars (5.0 ★★★★★) - the filled star is laid over Elementor's outline glyph; card stars centred */
+  /* 08: solid stars (5.0 â˜…â˜…â˜…â˜…â˜…) - the filled star is laid over Elementor's outline glyph; card stars centred */
   .ik-stars .elementor-star-rating i{position:relative}
   .ik-scope .ik-stars .elementor-star-rating i.elementor-star-full::before{content:"\2605"!important;position:absolute;left:0;top:0;width:100%;overflow:visible;font-family:Arial,sans-serif;color:var(--orange)}
   .s-rev .ik-stars .elementor-star-rating__wrapper{justify-content:center}
@@ -444,8 +394,6 @@
 /* desktop typography/spacing at full height (short laptop windows keep the existing max-height:720px rules) */
 @media (min-width:1181px) and (min-height:721px){
   /* 01: BALI PRICES fits its column; label and copy rhythm as in the reference */
-  .ik-scope .s-hero__title .elementor-heading-title{font-size:clamp(88px,9.2vw,176px)}
-  .ik-scope.ik-slide .elementor-widget.s-hero__p{margin:clamp(28px,4.4vh,52px) 0 clamp(30px,4.6vh,52px)}
   /* 05: MEET OUR ARTISTS stays inside its 40% column */
   .ik-scope .s-art__h .elementor-heading-title{font-size:clamp(56px,6.9vw,132px)}
 }
@@ -633,7 +581,7 @@ html.ik-dlg-open{overflow:hidden}
   .ik-artdlg__x{top:10px;right:10px;width:44px;height:44px}
 }
 /* artist selectors: on landscape tablets they stack (photo over name); on phones the photo + number carry the choice
-   (each button keeps its full "Name, AKA …" label for screen readers) */
+   (each button keeps its full "Name, AKA â€¦" label for screen readers) */
 @media (min-width:701px) and (max-width:1180px) and (orientation:landscape){
   .ik-artdlg__tab{flex-direction:column;align-items:center;gap:6px;padding:8px 6px;text-align:center}
   .ik-artdlg__tab img{width:100%;height:56px}
@@ -743,3 +691,33 @@ html.ik-dlg-open{overflow:hidden}
   body[data-ik-slide="location"] .ik-label{opacity:0}
 }
 .ik-locdlg__meta .ik-artdlg__num{flex:none;white-space:nowrap}
+
+
+/* Final artist carousel and original promotion image sizing (after Elementor/component rules). */
+.ik-scope .s-art__top{height:auto;min-height:0;flex:0 0 auto;align-items:flex-end}
+.ik-scope .s-art__txt{flex:0 0 100%;max-width:100%;padding-left:0}
+.ik-scope .s-art__h .elementor-heading-title{font-size:clamp(44px,6.2vw,96px)}
+.ik-scope .s-art__p,.ik-scope .s-art__stack{display:none}
+.ik-scope .ik-team{position:absolute;inset:auto calc(var(--ex) + 76px) clamp(38px,7vh,86px) clamp(50px,9vw,130px);z-index:8;display:flex;opacity:1;visibility:visible;padding:0;background:none;transition:none}
+.ik-scope .ik-team__in{width:100%;gap:16px}
+.ik-scope .ik-car.s-art__team{width:100%}
+.ik-scope .ik-car.s-art__team .ik-car__vp{border-radius:0}
+.ik-scope .ik-acard{width:calc((100% - 3 * clamp(16px,1.8vw,26px)) / 4);padding:0 0 18px;gap:8px;border:1px solid rgba(244,241,236,.18);border-radius:14px;background:#111317}
+.ik-acard__photo{height:clamp(190px,29vh,330px);margin:0;overflow:hidden;background:#090b0f}
+.ik-acard__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.ik-acard .ik-acard__n,.ik-acard .ik-acard__a,.ik-acard .ik-acard__r,.ik-acard .ik-acard__d{margin-left:18px;margin-right:18px}
+.ik-acard .ik-acard__n{margin-top:10px}.ik-acard__d{display:none}
+.ik-scope .ik-acard__n .elementor-heading-title{font-size:clamp(20px,2vw,30px)}
+.ik-acard__a p,.ik-acard__r p{font-size:12px}
+.ik-scope.s-rev .ik-car__it{padding-top:48px}
+.s-rev .ik-car__it::before{content:"";background:#fff url("../icons/google-g.svg") center/28px no-repeat;border-color:rgba(255,255,255,.6)}
+.s-rev__q p{quotes:none}
+.ik-scope.s-promo .ik-pcard{width:calc((100% - clamp(16px,1.8vw,26px)) / 2);height:clamp(430px,calc(100vh - 250px),700px)}
+.ik-scope .ik-pcard__img img{object-fit:contain;background:#f4f1ec}
+.ik-scope .s-foot__cols{margin-top:clamp(26px,5vh,58px);max-width:900px}
+.s-foot .ik-slide__inner{gap:clamp(28px,5vh,54px)}
+@media(max-width:1024px){.ik-scope .ik-acard{width:72%}.ik-acard__photo{height:clamp(230px,36vh,360px)}.ik-scope .ik-team{inset:auto 76px 12vh 40px}.ik-scope .s-art__h .elementor-heading-title{font-size:clamp(42px,7vw,72px)}}
+@media(max-width:767px){.ik-scope .s-art__top{height:auto;min-height:0;flex:none}.ik-scope .s-art__h .elementor-heading-title{font-size:clamp(38px,11vw,58px)}.ik-scope .ik-team{inset:auto 54px 11vh 22px}.ik-scope .ik-acard{width:84%}.ik-acard__photo{height:clamp(220px,38vh,360px)}.ik-scope .ik-car.s-art__team .ik-car__btn{top:auto;bottom:-58px;transform:none}.ik-scope .ik-car.s-art__team .ik-car__btn--p{left:calc(50% - 54px)}.ik-scope .ik-car.s-art__team .ik-car__btn--n{right:calc(50% - 54px)}.ik-scope.s-promo .ik-pcard{width:90%;height:clamp(390px,62svh,580px)}.s-foot .ik-slide__inner{gap:18px}.ik-scope .s-foot__cols{margin-top:12px}}
+
+@media(max-width:360px) and (max-height:650px){.ik-acard__photo{height:clamp(150px,27vh,190px)}.ik-scope .ik-acard{padding-bottom:10px}.ik-acard .ik-acard__n,.ik-acard .ik-acard__a,.ik-acard .ik-acard__r{margin-left:12px;margin-right:12px}.ik-scope .ik-car.s-art__team .ik-car__btn{bottom:-48px}.ik-scope.s-promo .ik-pcard{height:300px}}
+@media(max-width:767px) and (max-height:650px){.ik-scope.s-promo .ik-pcard{height:300px}.ik-acard__photo{height:clamp(170px,29vh,220px)}}

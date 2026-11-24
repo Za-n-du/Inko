@@ -52,8 +52,6 @@ function inko_customize_register( $wp_customize ) {
 	foreach ( array(
 		'facebook'  => array( 'Facebook', 'https://www.facebook.com/inkomelbourne/' ),
 		'instagram' => array( 'Instagram', 'https://www.instagram.com/inko_melbourne/' ),
-		'tiktok'    => array( 'TikTok', 'https://www.tiktok.com/@inko.melbourne?_r=1&_t=ZS-9AgJRaJcvlk' ),
-		'youtube'   => array( 'YouTube', 'https://youtube.com/@inko-b5s?si=r4qYbwGlXBcjs4s2' ),
 		'threads'   => array( 'Threads', 'https://www.threads.com/@inko_melbourne' ),
 	) as $key => $info ) {
 		$wp_customize->add_setting( 'inko_social_' . $key, array( 'default' => $info[1], 'sanitize_callback' => 'esc_url_raw' ) );

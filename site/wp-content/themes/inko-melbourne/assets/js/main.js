@@ -1,4 +1,4 @@
-/* INKO Melbourne - main.js: boot + carousels (Elementor containers wrapped for drag/arrows), location gallery, Follow-Us loop. */
+/* INKO Melbourne - main.js: boot + carousels (Elementor containers wrapped for drag/arrows), location gallery and review/promotion carousels. */
 (function () {
   'use strict';
   var INKO = window.INKO;
@@ -277,119 +277,18 @@
     }
     var artSlide = stack.closest('.ik-slide'); if (artSlide) artSlide.__car = { idx: 0, go: function (n) { rot(n > 0 ? 1 : -1); } };
   }
-  /* ---------- "Meet the team": artist profile dialog (native <dialog>, opened from the hero's MEET THE TEAM button).
-     One record per artist, built from the two existing sources so photo and details can never drift apart:
-     the team cards in Elementor ("ik-team": name / AKA / role / bio, in their approved order) and the slide photo that
-     carries the matching "ik-artist-<name>" class. The Elementor team panel itself stays hidden as the data source. ---------- */
+  /* ---------- Meet Our Artists: visible image cards, driven by the same Elementor artist data. ---------- */
   var team = $('.ik-team');
-  var dlgList = [];
-  if (team && stack && window.HTMLDialogElement) {
-    $$('.ik-acard', team).forEach(function (c) {
-      var n = $('.ik-acard__n', c), key = n && slug(n.textContent), im = key && $('.s-art__ph.ik-artist-' + key + ' img', stack);
-      var t = function (k) { var e = $('.ik-acard__' + k, c); return e ? e.textContent.trim() : ''; };
-      if (im) dlgList.push({ key: key, name: t('n'), aka: t('a').replace(/^aka\s+/i, ''), role: t('r'), bio: t('d'), img: im });
+  if (team && stack) {
+    $$('.ik-acard', team).forEach(function (card) {
+      var name = $('.ik-acard__n', card), key = name && slug(name.textContent);
+      var source = key && $('.s-art__ph.ik-artist-' + key + ' img', stack);
+      if (!source || $('.ik-acard__photo', card)) return;
+      var figure = document.createElement('figure'); figure.className = 'ik-acard__photo';
+      var portrait = source.cloneNode(false); portrait.removeAttribute('loading'); portrait.removeAttribute('class');
+      portrait.alt = name.textContent.trim() + ', INKO Melbourne tattoo artist'; portrait.draggable = false;
+      figure.appendChild(portrait); card.insertBefore(figure, card.firstChild);
     });
-  }
-  if (dlgList.length) {
-    var D = dlgList.length, dcur = 0, dOpener = null, dScrollY = 0, dT;
-    var mk = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
-    var two = function (i) { return ('0' + (i + 1)).slice(-2); };
-    var dlg = mk('dialog', 'ik-artdlg'); dlg.setAttribute('aria-labelledby', 'ik-artdlg-name');
-    dlg.innerHTML =
-      '<div class="ik-artdlg__box">' +
-        '<button type="button" class="ik-artdlg__x" aria-label="Close artist profiles"></button>' +
-        '<div class="ik-artdlg__main" data-ik-scroll>' +
-          '<figure class="ik-artdlg__ph"></figure>' +
-          '<div class="ik-artdlg__info">' +
-            '<p class="ik-artdlg__eyebrow">Meet our artists</p>' +
-            '<p class="ik-artdlg__num" aria-hidden="true"><b></b><span></span></p>' +
-            '<h2 class="ik-artdlg__name" id="ik-artdlg-name"></h2>' +
-            '<p class="ik-artdlg__aka">AKA <b></b></p>' +
-            '<p class="ik-artdlg__role"></p>' +
-            '<p class="ik-artdlg__bio"></p>' +
-            '<a class="ik-artdlg__cta" href="#fine-line"><span>View work</span>' + ARROW_R + '</a>' +
-          '</div>' +
-        '</div>' +
-        '<div class="ik-artdlg__bar">' +
-          '<button type="button" class="ik-artdlg__btn ik-artdlg__btn--p" aria-label="Previous artist">' + ARROW_L + '</button>' +
-          '<div class="ik-artdlg__tabs" role="group" aria-label="Choose an artist"></div>' +
-          '<button type="button" class="ik-artdlg__btn ik-artdlg__btn--n" aria-label="Next artist">' + ARROW_R + '</button>' +
-        '</div>' +
-        '<p class="ik-artdlg__live ik-sr" aria-live="polite"></p>' +
-      '</div>';
-    document.body.appendChild(dlg);
-    var q = function (s) { return $(s, dlg); };
-    var fig = q('.ik-artdlg__ph'), tabs = q('.ik-artdlg__tabs'), mainEl = q('.ik-artdlg__main'), tabBtns = [];
-    dlgList.forEach(function (a, i) {
-      /* portrait: the whole photo is shown (contain) over a soft, blurred copy of itself, so nothing is cropped away */
-      var bg = a.img.cloneNode(false), im = a.img.cloneNode(false);
-      [bg, im].forEach(function (x) { x.removeAttribute('loading'); x.removeAttribute('class'); x.sizes = '(max-width:700px) 92vw, 46vw'; x.draggable = false; });
-      bg.alt = ''; bg.className = 'ik-artdlg__blur'; im.alt = a.name + ' (' + a.aka + '), INKO Melbourne tattoo artist, at work';
-      var slot = mk('div', 'ik-artdlg__slot'); slot.appendChild(bg); slot.appendChild(im); fig.appendChild(slot);
-      var b = mk('button', 'ik-artdlg__tab'); b.type = 'button'; b.setAttribute('aria-label', a.name + ', AKA ' + a.aka);
-      var tim = a.img.cloneNode(false); tim.removeAttribute('class'); tim.alt = ''; tim.sizes = '120px'; tim.setAttribute('loading', 'lazy');
-      b.appendChild(tim); b.appendChild(mk('span', 'ik-artdlg__tnum', two(i))); b.appendChild(mk('span', 'ik-artdlg__tname', a.name));
-      b.addEventListener('click', function () { dShow(i); }); tabs.appendChild(b); tabBtns.push(b);
-    });
-    var dFill = function () {
-      var a = dlgList[dcur];
-      q('.ik-artdlg__num b').textContent = two(dcur); q('.ik-artdlg__num span').textContent = '/ ' + two(D - 1);
-      q('.ik-artdlg__name').textContent = a.name; q('.ik-artdlg__aka b').textContent = a.aka;
-      q('.ik-artdlg__role').textContent = a.role; q('.ik-artdlg__bio').textContent = a.bio;
-      q('.ik-artdlg__cta').setAttribute('aria-label', 'View our work (Fine-Line and Realism galleries)');
-      dlg.setAttribute('data-artist', a.key);
-      [].forEach.call(fig.children, function (s, i) { s.classList.toggle('is-on', i === dcur); });
-      tabBtns.forEach(function (b, i) { if (i === dcur) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
-      q('.ik-artdlg__live').textContent = 'Artist ' + (dcur + 1) + ' of ' + D + ': ' + a.name;
-      mainEl.scrollTop = 0;
-    };
-    /* every field of the profile is written in one go (dFill), so a name is never shown with another artist's photo */
-    var dShow = function (i) {
-      var nx = ((i % D) + D) % D; if (nx === dcur) return; dcur = nx;
-      clearTimeout(dT);
-      if (rm.matches) return dFill();
-      dlg.classList.add('is-swap');
-      dT = setTimeout(function () { dFill(); dlg.classList.remove('is-swap'); }, 180);
-    };
-    var dOpen = function (opener) {
-      if (dlg.open) return;
-      dOpener = opener || document.activeElement; dScrollY = window.scrollY;
-      dFill(); document.documentElement.classList.add('ik-dlg-open');
-      dlg.showModal(); q('.ik-artdlg__x').focus({ preventScroll: true });
-    };
-    var dClose = function () { if (dlg.open) dlg.close(); };
-    dlg.addEventListener('close', function () {
-      document.documentElement.classList.remove('ik-dlg-open');
-      if (dScrollY !== null && Math.abs(window.scrollY - dScrollY) > 1) window.scrollTo(0, dScrollY);
-      if (dOpener && dOpener.focus) dOpener.focus({ preventScroll: true });
-    });
-    q('.ik-artdlg__x').addEventListener('click', dClose);
-    q('.ik-artdlg__btn--p').addEventListener('click', function () { dShow(dcur - 1); });
-    q('.ik-artdlg__btn--n').addEventListener('click', function () { dShow(dcur + 1); });
-    /* backdrop click closes (a press that starts inside the box and ends outside it does not) */
-    var downOnBackdrop = false;
-    dlg.addEventListener('pointerdown', function (e) { downOnBackdrop = e.target === dlg; });
-    dlg.addEventListener('click', function (e) { if (e.target === dlg && downOnBackdrop) dClose(); downOnBackdrop = false; });
-    dlg.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); dShow(dcur + (e.key === 'ArrowRight' ? 1 : -1)); }
-      else if (e.key === 'Home') { e.preventDefault(); dShow(0); } else if (e.key === 'End') { e.preventDefault(); dShow(D - 1); }
-      e.stopPropagation();
-    });
-    /* swipe on the portrait */
-    var dsx = null, dsy = 0;
-    fig.addEventListener('touchstart', function (e) { if (e.touches.length === 1) { dsx = e.touches[0].clientX; dsy = e.touches[0].clientY; } }, { passive: true });
-    fig.addEventListener('touchend', function (e) {
-      var t = e.changedTouches && e.changedTouches[0]; if (dsx === null || !t) return;
-      var dx = t.clientX - dsx, dy = t.clientY - dsy; dsx = null;
-      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) dShow(dcur + (dx < 0 ? 1 : -1));
-    }, { passive: true });
-    /* "View work" closes the dialog and goes to the Fine-Line gallery (the link is handled by the slide navigation) */
-    q('.ik-artdlg__cta').addEventListener('click', function () { dOpener = null; dScrollY = null; dClose(); });
-    /* MEET THE TEAM (any link to #ik-team) opens the dialog instead of the old team panel */
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest('a[href="#ik-team"]'); if (a) { e.preventDefault(); e.stopPropagation(); dOpen(a); }
-    }, true);
-    api.on('change', function () { if (dlg.open) dClose(); });
   }
 
   /* ---------- pagination dots (mobile) for the reviews and promotions carousels ---------- */
@@ -408,14 +307,6 @@
     var car = slides[api.active()] && slides[api.active()].__car;
     if (car) car.go(car.idx + (e.deltaX > 0 ? 1 : -1));
   });
-
-  /* ---------- marquee (Follow Us): duplicates the Elementor group for a seamless loop ---------- */
-  var mq = $('.ik-marq'), grp = mq && $('.ik-marq__grp', mq);
-  if (grp) {
-    var tr2 = document.createElement('div'); tr2.className = 'ik-marq__tr';
-    grp.parentNode.insertBefore(tr2, grp); tr2.appendChild(grp);
-    for (var k = 0; k < 2; k++) { var c2 = grp.cloneNode(true); c2.setAttribute('aria-hidden', 'true'); $$('a', c2).forEach(function (x) { x.tabIndex = -1; }); tr2.appendChild(c2); }
-  }
 
   /* ---------- Ink Now headline streak mirrors the editable heading text ---------- */
   $$('.s-pay__title .elementor-heading-title').forEach(function (h) { h.setAttribute('data-text', h.textContent); });

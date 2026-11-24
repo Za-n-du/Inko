@@ -6,7 +6,7 @@
   var $$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)); };
 
   /* which nav item (by slide id) is highlighted for each slide; unknown/new slides inherit the previous one */
-  var GROUP = { home: 'home', specialities: 'fine-line', 'fine-line': 'fine-line', realism: 'fine-line', artists: 'artists', 'follow-us': 'fine-line',
+  var GROUP = { home: 'home', specialities: 'fine-line', 'fine-line': 'fine-line', realism: 'fine-line', artists: 'artists',
     location: 'location', reviews: 'location', 'pay-later': 'location', promotions: 'fine-line', quote: 'quote', footer: 'quote' };
 
   /* burger + full-screen menu: used on slide pages AND ordinary pages */

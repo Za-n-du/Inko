@@ -37,3 +37,9 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# --- Local test artifacts (headless-browser profiles, screenshots, scripts) ---
+/.tmp-*
+/homepage-*.png
+/homepage-*-metrics.json
+/slide01-*.png

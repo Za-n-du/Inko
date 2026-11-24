@@ -9,7 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 $ik_stack = inko_is_stack_page();
-$ik_home  = $ik_stack ? '#home' : home_url( '/' );
+$ik_homepage = inko_is_editorial_home();
+$ik_home  = ( $ik_stack || $ik_homepage ) ? '#home' : home_url( '/' );
 $ik_box   = inko_logo( 'box' );
 $ik_plain = inko_logo( 'plain' );
 $ik_name  = inko_contact( 'name' );
@@ -18,11 +19,11 @@ if ( 0 === strpos( $ik_book, '#' ) && ! $ik_stack ) {
 	$ik_book = home_url( '/' ) . $ik_book;
 }
 ?>
-<header class="ik-header<?php echo $ik_stack ? ' is-hero' : ''; ?>" id="ik-header" role="banner">
-	<a class="ik-logo ik-logo--box" href="<?php echo esc_url( $ik_home ); ?>" aria-label="<?php echo esc_attr( $ik_name ); ?>"<?php echo $ik_stack ? '' : ' hidden'; ?>>
+<header class="ik-header<?php echo $ik_stack ? ' is-hero' : ''; ?><?php echo $ik_homepage ? ' is-home' : ''; ?>" id="ik-header" role="banner">
+	<a class="ik-logo ik-logo--box" href="<?php echo esc_url( $ik_home ); ?>" aria-label="<?php echo esc_attr( $ik_name ); ?>"<?php echo ( $ik_stack || $ik_homepage ) ? '' : ' hidden'; ?>>
 		<img src="<?php echo esc_url( $ik_box['url'] ); ?>" width="<?php echo (int) $ik_box['w']; ?>" height="<?php echo (int) $ik_box['h']; ?>" alt="<?php echo esc_attr( $ik_name ); ?>">
 	</a>
-	<a class="ik-logo ik-logo--plain" href="<?php echo esc_url( $ik_home ); ?>" aria-label="<?php echo esc_attr( $ik_name ); ?>"<?php echo $ik_stack ? ' hidden' : ''; ?>>
+	<a class="ik-logo ik-logo--plain" href="<?php echo esc_url( $ik_home ); ?>" aria-label="<?php echo esc_attr( $ik_name ); ?>"<?php echo ( $ik_stack || $ik_homepage ) ? ' hidden' : ''; ?>>
 		<img src="<?php echo esc_url( $ik_plain['url'] ); ?>" width="<?php echo (int) $ik_plain['w']; ?>" height="<?php echo (int) $ik_plain['h']; ?>" alt="<?php echo esc_attr( $ik_name ); ?>">
 	</a>
 	<nav class="ik-nav" aria-label="<?php esc_attr_e( 'Primary', 'inko-melbourne' ); ?>">
