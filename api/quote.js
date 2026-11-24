@@ -22,6 +22,8 @@ const ascii = (b, s, e) => String.fromCharCode(...b.subarray(s, e));
 const EMAIL_RE = /^[^\s@<>()",;:]+@[^\s@<>()",;:]+\.[^\s@<>()",;:]{2,}$/;
 const PHONE_RE = /^[+()0-9 .-]{6,25}$/;
 const ID_RE = /^[A-Za-z0-9-]{8,64}$/;
+// Optional "Preferred artist" field: only the studio's own artists are accepted (anything else = no preference).
+const ARTISTS = ['Swan', 'Elmundo', 'Yinkspire', 'Don'];
 
 const json = (status, body) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } });
 const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -59,7 +61,7 @@ export async function checkFile(file) {
 
 function buildEmail(f, file) {
   const name = `${f.firstName} ${f.lastName}`;
-  const rows = [['Name', name], ['Email', f.email], ['Phone', f.phone || 'Not provided'], ['Reference file', file ? `${file.filename} (${Math.round(file.size / 1024)} KB, attached)` : 'None']];
+  const rows = [['Name', name], ['Email', f.email], ['Phone', f.phone || 'Not provided'], ['Preferred artist', f.artist || 'No preference'], ['Reference file', file ? `${file.filename} (${Math.round(file.size / 1024)} KB, attached)` : 'None']];
   const html =
     `<h2 style="font-family:Arial,sans-serif">New tattoo quotation request</h2>` +
     `<table style="font-family:Arial,sans-serif;border-collapse:collapse">` +
@@ -98,6 +100,7 @@ export async function POST(request) {
     email: text(form, 'email'),
     phone: text(form, 'phone'),
     details: text(form, 'details'),
+    artist: ARTISTS.includes(text(form, 'artist')) ? text(form, 'artist') : '',
   };
   const errors = validate(fields);
   const fileCheck = await checkFile(form.get('file'));

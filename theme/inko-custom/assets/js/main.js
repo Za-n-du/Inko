@@ -596,7 +596,8 @@
 		form.addEventListener('submit', function (e) {
 			var invalid = [];
 			$$('[required]', form).forEach(function (f) {
-				var bad = !f.value.trim() || (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim()));
+				var min = parseInt(f.getAttribute('minlength'), 10) || 0;
+				var bad = !f.value.trim() || f.value.trim().length < min || (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim()));
 				f.setAttribute('aria-invalid', bad ? 'true' : 'false');
 				if (bad) { invalid.push(f); }
 			});
@@ -618,6 +619,46 @@
 			}
 			var btn = $('button[type="submit"]', form);
 			if (btn) { btn.disabled = true; btn.setAttribute('aria-busy', 'true'); }
+
+			// Static site (Vercel): post to the serverless function and show its answer in place.
+			if (!form.hasAttribute('data-async') || !window.fetch || !window.FormData) { return; }
+			e.preventDefault();
+			var data = new FormData(form);
+			data.append('submissionId', submissionId);
+			say('Sending…', 'info');
+			fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+				.then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+				.then(function (res) {
+					if (res && res.ok) {
+						form.reset();
+						if (label) { label.textContent = defaultLabel; }
+						submissionId = newId();
+						say('Thank you — your request has been sent. We’ll get back to you with a personalised quote.', 'ok');
+						return;
+					}
+					var fields = (res && res.fields) || {};
+					var map = { firstName: 'q-first', lastName: 'q-last', email: 'q-email', phone: 'q-phone', details: 'q-details', file: 'q-file' };
+					Object.keys(fields).forEach(function (k) { var el = map[k] && document.getElementById(map[k]); if (el) { el.setAttribute('aria-invalid', 'true'); } });
+					var msgs = Object.keys(fields).map(function (k) { return fields[k]; });
+					say((res && res.error ? res.error : 'Sorry, your request could not be sent. Please email or call us instead.') + (msgs.length ? ' ' + msgs.join(' ') : ''), 'error');
+				})
+				.catch(function () { say('Sorry, your request could not be sent. Please check your connection, or email or call us instead.', 'error'); })
+				.then(function () {
+					if (btn) { btn.disabled = false; btn.removeAttribute('aria-busy'); }
+					status.focus({ preventScroll: true });
+				});
+		});
+
+		// One id per submission attempt: the server ignores accidental double sends.
+		function newId() { return 'q-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10); }
+		var submissionId = newId();
+
+		// "Book This Artist": preselect the artist in the form.
+		var artistSelect = $('[data-artist-select]', form);
+		$$('[data-book-artist]').forEach(function (a) {
+			a.addEventListener('click', function () {
+				if (artistSelect) { artistSelect.value = a.getAttribute('data-book-artist'); }
+			});
 		});
 
 		$$('input, textarea', form).forEach(function (f) {

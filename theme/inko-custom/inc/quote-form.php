@@ -64,8 +64,13 @@ function inko_quote_handle() {
 		inko_quote_redirect( 'wait' );
 	}
 
-	$first   = isset( $_POST['first_name'] ) ? sanitize_text_field( wp_unslash( $_POST['first_name'] ) ) : '';
-	$last    = isset( $_POST['last_name'] ) ? sanitize_text_field( wp_unslash( $_POST['last_name'] ) ) : '';
+	// Field names match the Vercel function (api/quote.js) so one form works on both.
+	$first   = isset( $_POST['firstName'] ) ? sanitize_text_field( wp_unslash( $_POST['firstName'] ) ) : '';
+	$last    = isset( $_POST['lastName'] ) ? sanitize_text_field( wp_unslash( $_POST['lastName'] ) ) : '';
+	$artist  = isset( $_POST['artist'] ) ? sanitize_text_field( wp_unslash( $_POST['artist'] ) ) : '';
+	if ( ! in_array( $artist, wp_list_pluck( inko_content( 'artists' )['items'], 'name' ), true ) ) {
+		$artist = ''; // Only the studio's own artists are accepted.
+	}
 	$email   = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
 	$phone   = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
 	$details = isset( $_POST['details'] ) ? sanitize_textarea_field( wp_unslash( $_POST['details'] ) ) : '';
@@ -76,8 +81,8 @@ function inko_quote_handle() {
 
 	// Optional reference file.
 	$attachment = '';
-	if ( ! empty( $_FILES['reference']['name'] ) ) {
-		$file = $_FILES['reference']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- validated below.
+	if ( ! empty( $_FILES['file']['name'] ) ) {
+		$file = $_FILES['file']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- validated below.
 
 		if ( UPLOAD_ERR_OK !== (int) $file['error'] || (int) $file['size'] > INKO_QUOTE_MAX_BYTES || ! is_uploaded_file( $file['tmp_name'] ) ) {
 			inko_quote_redirect( 'file' );
@@ -102,6 +107,7 @@ function inko_quote_handle() {
 	$body  = "New quotation request from the website\n\n";
 	$body .= "Name: {$client}\n";
 	$body .= "Email: {$email}\n";
+	$body .= 'Preferred artist: ' . ( '' !== $artist ? $artist : 'No preference' ) . "\n";
 	$body .= 'Phone: ' . ( '' !== $phone ? $phone : '—' ) . "\n\n";
 	$body .= "Details:\n{$details}\n";
 	$body .= $attachment ? "\nReference file attached.\n" : "\nNo reference file.\n";

@@ -32,7 +32,8 @@ $inko_status = inko_quote_status();
 			</div>
 		</div>
 
-		<form class="quote-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" enctype="multipart/form-data" data-reveal style="--d:.15s" novalidate>
+		<?php // The static export swaps action for data-static-action and adds data-async (JS posts to the Vercel function). ?>
+		<form class="quote-form" id="quote-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" data-static-action="/api/quote" method="post" enctype="multipart/form-data" data-reveal style="--d:.15s" novalidate>
 			<input type="hidden" name="action" value="inko_quote">
 			<?php wp_nonce_field( 'inko_quote', 'inko_quote_nonce' ); ?>
 
@@ -44,11 +45,11 @@ $inko_status = inko_quote_status();
 				<legend><?php esc_html_e( 'Name', 'inko-custom' ); ?> <span aria-hidden="true">*</span></legend>
 				<div class="field">
 					<label for="q-first"><?php esc_html_e( 'First Name', 'inko-custom' ); ?></label>
-					<input id="q-first" name="first_name" type="text" autocomplete="given-name" required maxlength="80">
+					<input id="q-first" name="firstName" type="text" autocomplete="given-name" required maxlength="80">
 				</div>
 				<div class="field">
 					<label for="q-last"><?php esc_html_e( 'Last Name', 'inko-custom' ); ?></label>
-					<input id="q-last" name="last_name" type="text" autocomplete="family-name" required maxlength="80">
+					<input id="q-last" name="lastName" type="text" autocomplete="family-name" required maxlength="80">
 				</div>
 			</fieldset>
 
@@ -63,13 +64,23 @@ $inko_status = inko_quote_status();
 				</div>
 			</div>
 
+			<div class="field">
+				<label for="q-artist"><?php esc_html_e( 'Preferred artist', 'inko-custom' ); ?></label>
+				<select id="q-artist" name="artist" data-artist-select>
+					<option value=""><?php esc_html_e( 'No preference', 'inko-custom' ); ?></option>
+					<?php foreach ( inko_content( 'artists' )['items'] as $inko_ar ) : ?>
+						<option value="<?php echo esc_attr( $inko_ar['name'] ); ?>"><?php echo esc_html( $inko_ar['name'] . ' (' . $inko_ar['role'] . ')' ); ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+
 			<div class="field field--file">
 				<span class="field__label" id="q-file-label"><?php esc_html_e( 'File Upload', 'inko-custom' ); ?></span>
 				<label class="file-drop" for="q-file">
 					<?php echo inko_icon( 'upload' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 					<span class="file-drop__text" data-file-name><?php esc_html_e( 'Choose a file', 'inko-custom' ); ?></span>
 				</label>
-				<input class="file-input" id="q-file" name="reference" type="file" accept=".jpg,.jpeg,.png,.webp,.heic,.pdf,image/jpeg,image/png,image/webp,image/heic,application/pdf" aria-describedby="q-file-help" aria-labelledby="q-file-label" data-max="<?php echo esc_attr( INKO_QUOTE_MAX_BYTES ); ?>">
+				<input class="file-input" id="q-file" name="file" type="file" accept=".jpg,.jpeg,.png,.webp,.heic,.pdf,image/jpeg,image/png,image/webp,image/heic,application/pdf" aria-describedby="q-file-help" aria-labelledby="q-file-label" data-max="<?php echo esc_attr( INKO_QUOTE_MAX_BYTES ); ?>">
 				<p class="field__help" id="q-file-help"><?php esc_html_e( 'Your tattoo reference or design: JPG, PNG, WEBP, HEIC or PDF, up to 4 MB.', 'inko-custom' ); ?></p>
 			</div>
 
@@ -84,7 +95,7 @@ $inko_status = inko_quote_status();
 					echo esc_html( implode( '  ', $inko_help ) );
 					?>
 				</p>
-				<textarea id="q-details" name="details" rows="4" required maxlength="4000" aria-describedby="q-details-help"></textarea>
+				<textarea id="q-details" name="details" rows="4" required minlength="10" maxlength="4000" aria-describedby="q-details-help"></textarea>
 			</div>
 
 			<div class="hp" aria-hidden="true">

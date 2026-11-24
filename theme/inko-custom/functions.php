@@ -123,6 +123,11 @@ function inko_head_extras() {
 	}
 
 	echo '<meta name="theme-color" content="#050505">' . "\n";
+
+	// Browser tab icon from the original INKO logo, unless a Site Icon is set in the Customizer.
+	if ( ! has_site_icon() ) {
+		printf( '<link rel="icon" type="image/png" href="%s">' . "\n", esc_url( inko_asset( 'images/logo-inko.png' ) ) );
+	}
 }
 add_action( 'wp_head', 'inko_head_extras', 2 );
 

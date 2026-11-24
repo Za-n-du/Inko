@@ -89,37 +89,61 @@ function inko_content( $key = null ) {
 				),
 			),
 
+			/*
+			 * Artists — name, alias, role and bio are the original website's (verified 25 Nov 2026).
+			 * 'specialties' repeat the styles each artist's own role/bio names; nothing added.
+			 * 'gallery' is the studio gallery for that style (studio work, not a personal portfolio).
+			 * NOT published anywhere yet — leave empty until the client supplies them:
+			 *   'instagram'  => personal Instagram URL (shown as "Instagram" + used for "View Portfolio")
+			 *   'experience' => years of experience text
+			 */
 			'artists'    => array(
 				'title' => 'Meet Our Artists',
 				'items' => array(
 					array(
-						'img'  => 'artist-swan',
-						'name' => 'Swan',
-						'aka'  => 'BunnyGirlInk',
+						'img'         => 'artist-swan',
+						'name'        => 'Swan',
+						'aka'         => 'BunnyGirlInk',
 						// Client: unnecessary dashes removed from captions (original: "Fine-Line Artist – Floral & Realism").
-				'role' => 'Fine Line Artist, Floral & Realism',
-						'bio'  => 'Specialising in fine line floral and soft realism tattoos, we create clean, delicate designs with subtle depth—timeless, minimal, and effortlessly elegant.',
+						'role'        => 'Fine Line Artist, Floral & Realism',
+						'specialties' => array( 'Fine Line', 'Floral', 'Soft Realism' ),
+						'gallery'     => 'finelineshowcase',
+						'instagram'   => '',
+						'experience'  => '',
+						'bio'         => 'Specialising in fine line floral and soft realism tattoos, we create clean, delicate designs with subtle depth—timeless, minimal, and effortlessly elegant.',
 					),
 					array(
-						'img'  => 'artist-elmundo',
-						'name' => 'Elmundo',
-						'aka'  => 'ELM J',
-						'role' => 'Realism Artist',
-						'bio'  => 'Specialist in Realism and Fine Line Realism tattoos, executing flawless detail and understated depth. Committed to crafting timeless designs that ensure each piece is uniquely personal.',
+						'img'         => 'artist-elmundo',
+						'name'        => 'Elmundo',
+						'aka'         => 'ELM J',
+						'role'        => 'Realism Artist',
+						'specialties' => array( 'Realism', 'Fine Line Realism' ),
+						'gallery'     => 'realism-showcase',
+						'instagram'   => '',
+						'experience'  => '',
+						'bio'         => 'Specialist in Realism and Fine Line Realism tattoos, executing flawless detail and understated depth. Committed to crafting timeless designs that ensure each piece is uniquely personal.',
 					),
 					array(
-						'img'  => 'artist-yinkspire',
-						'name' => 'Yinkspire',
-						'aka'  => 'Yosufi',
-						'role' => 'Realism Artist',
-						'bio'  => 'Specialises in detailed realism tattoos with striking depth and precision, creating lifelike designs that stand the test of time.',
+						'img'         => 'artist-yinkspire',
+						'name'        => 'Yinkspire',
+						'aka'         => 'Yosufi',
+						'role'        => 'Realism Artist',
+						'specialties' => array( 'Realism' ),
+						'gallery'     => 'realism-showcase',
+						'instagram'   => '',
+						'experience'  => '',
+						'bio'         => 'Specialises in detailed realism tattoos with striking depth and precision, creating lifelike designs that stand the test of time.',
 					),
 					array(
-						'img'  => 'artist-don',
-						'name' => 'Don',
-						'aka'  => 'OIDONNY',
-						'role' => 'Founder, INKO', // Original: "Founder - INKO".
-						'bio'  => 'Specialises Realism and Fine Line realism tattoos with flawless detail and subtle depth. Dedicated to timeless, true-to-life designs that make every piece unique.',
+						'img'         => 'artist-don',
+						'name'        => 'Don',
+						'aka'         => 'OIDONNY',
+						'role'        => 'Founder, INKO', // Original: "Founder - INKO".
+						'specialties' => array( 'Realism', 'Fine Line Realism' ),
+						'gallery'     => 'realism-showcase',
+						'instagram'   => '',
+						'experience'  => '',
+						'bio'         => 'Specialises Realism and Fine Line realism tattoos with flawless detail and subtle depth. Dedicated to timeless, true-to-life designs that make every piece unique.',
 					),
 				),
 			),
