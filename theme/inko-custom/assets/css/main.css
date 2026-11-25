@@ -1597,9 +1597,6 @@ html.menu-open, body.menu-open { overflow: hidden; }
 .artist__index { margin-bottom: 10px; }
 .artist__name { font-size: clamp(1.6rem, 1.9vw, 2.05rem); }
 .artist__role { margin: 12px 0 14px; padding-bottom: 14px; }
-.artist__actions { flex-direction: column; align-items: stretch; gap: 10px; }
-.artist__link { align-self: flex-start; }
-.artist__book { width: 100%; }
 a[href^="tel:"] { white-space: nowrap; }
 @media (max-width: 1279px) {
 	.artists { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
@@ -1620,8 +1617,22 @@ a[href^="tel:"] { white-space: nowrap; }
 .artist__tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
 .artist__tags li { padding: 4px 11px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: .76rem; font-weight: 600; line-height: 1.4; color: var(--white); }
 .artist__bio { margin-bottom: 0; }
-.artist__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-top: auto; padding-top: 22px; }
-.artist__link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; border-bottom: 1px solid var(--orange); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; transition: color .3s, gap .3s var(--ease); }
+/* Actions: one vertical stack at every width — "View … Work" link, then the full-width booking
+   button. No wrapping: a wrapping column would push the button into a second column. */
+.artist__actions { display: flex; flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 12px; margin-top: auto; padding-top: 22px; }
+.artist__book {
+	flex: none;
+	align-self: stretch;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	min-height: 52px;
+	padding: 0 20px;
+	justify-content: center;
+	text-align: center;
+	white-space: nowrap;
+}
+.artist__link { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; border-bottom: 1px solid var(--orange); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; transition: color .3s, gap .3s var(--ease); }
 .artist__link .icon { width: 16px; height: 16px; color: var(--orange); }
 .artist__link:hover { color: var(--orange); gap: 12px; }
 
@@ -1682,7 +1693,6 @@ a[href^="tel:"] { white-space: nowrap; }
 	.gallery__link::after { opacity: .9; transform: none; width: 34px; height: 34px; font-size: 1.15rem; right: 8px; bottom: 8px; }
 	.work-head__nav { gap: 6px 18px; }
 	.artist__actions { padding-top: 18px; }
-	.artist__book { flex: 1 1 100%; }
 }
 
 /* 13. Reduced motion -------------------------------------------------------- */
